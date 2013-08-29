@@ -5,9 +5,8 @@
         versionCode="10" 
         version   = "1.0.0">
 
-    <!-- versionCode is optional and Android only -->
 
-    <name>SubicTacular!</name>
+    <name>SubicTacular! Beta</name>
 
     <description>
 Subic
@@ -16,5 +15,16 @@ Subic
     <author >
         Kenneth Canlas
     </author>
+<preference name="splash-screen-duration" value="4000" />
+<icon src="icons/ldpi.png" gap:platform="android" gap:density="ldpi" />
+<icon src="icons/mdpi.png" gap:platform="android" gap:density="mdpi" />
+<icon src="icons/hdpi.png" gap:platform="android" gap:density="hdpi" />
+<icon src="icons/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+	
+	
+<gap:splash src="splash/ldpi.png" gap:platform="android" gap:density="ldpi" />
+<gap:splash src="splash/mdpi.png" gap:platform="android" gap:density="mdpi" />
+<gap:splash src="splash/hdpi.png" gap:platform="android" gap:density="hdpi" />
+<gap:splash src="splash/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
 
 </widget>
