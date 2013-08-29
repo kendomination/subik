@@ -1,0 +1,971 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+<link href="css/jquery.mobile-1.0rc2.min.css" type="text/css"  rel="stylesheet" />
+<link rel="stylesheet" href="css/subic.min.css" />
+<link href="css/jquery-mobile.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css" />
+<link rel="stylesheet" href="css/subic.css" />
+<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css" />
+<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link href="photoswipe.css" type="text/css" rel="stylesheet" />
+<link href="css/jquery-mobile.css" type="text/css" rel="stylesheet" />
+
+<script type="text/javascript" src="js/jquery.mobile-1.0rc2.min.js"></script>
+<script type="text/javascript" src="js/klass.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+
+ <script>
+		
+		/*
+		 * IMPORTANT!!!
+		 * REMEMBER TO ADD  rel="external"  to your anchor tags. 
+		 * If you don't this will mess with how jQuery Mobile works
+		 */
+		
+		(function(window, $, PhotoSwipe){
+			
+			$(document).ready(function(){
+				
+				$('div.gallery-page')
+					.live('pageshow', function(e){
+						
+						var 
+							currentPage = $(e.target),
+							options = {},
+							photoSwipeInstance = $("ul.gallery a", e.target).photoSwipe(options,  currentPage.attr('id'));
+							
+						return true;
+						
+					})
+					
+					.live('pagehide', function(e){
+						
+						var 
+							currentPage = $(e.target),
+							photoSwipeInstance = PhotoSwipe.getInstance(currentPage.attr('id'));
+
+						if (typeof photoSwipeInstance != "undefined" && photoSwipeInstance != null)  {
+							PhotoSwipe.detatch(photoSwipeInstance);
+						}
+						
+						return true;
+						
+					});
+				
+			});
+		
+		}(window, window.jQuery, window.Code.PhotoSwipe));
+		
+ </script>
+ 
+ <style>
+ .nav-search .ui-btn-up-a {
+					background-image:none;
+					background-color:#333333;
+				}
+				.nav-search .ui-btn-inner {
+					border-top: 1px solid #888;
+					border-color: rgba(255, 255, 255, .1);
+				}
+body .ui-body-b, body .ui-overlay-b { text-shadow:0 0 0; }
+ </style>
+<title>SubicTacular!</title>
+</head>
+<body>
+
+<!--Main Menu-->
+<div data-role="page" id="main"style="background: #ffffff
+    url('images/bg.png');  background-attachment:fixed;" data-theme="b" >
+	
+		<div data-role="content" align="center">
+	<img src="images/logo-beta.png"/>
+	<br>
+		<a href="#dir"><img src="images/directory.png" /></a>
+		<a href="#info"><img src="images/info.png" /></a>
+		<a href="#lgu"><img src="images/lgu.png" /></a>
+		<a href="photo.html" rel="external"><img src="images/gallery.png" /></a>
+		<a href="#about"  data-role="button">About SubicTacular</a>
+		</div>
+</div>
+
+<!--LGU-->
+<div data-role="page" id="lgu" style="background: #ffffff
+    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+	<div data-role="header" style="min-height: 70px;">
+	<a href="#main" data-icon="back" class="ui-btn-right" data-iconpos="notext"></a>
+	<center>
+	<br>
+		<p style="font-size:25px">LGU Directory</p>
+	</center>
+	</div>
+	
+	<div data-role="content">
+			<h2>Touch the <img src="images/smallcall.png"/> button to call number</h2>
+			<br>
+			<br>
+		<h4>Fire Department:160</h4>
+				<a href="tel:047160"><img src="images/buttons/call.png" /></a>
+		<br>
+		<h4>Fire Department(Direct Line):232-6054</h4>
+			<a href="tel:0472320654"><img src="images/buttons/call.png" /></a>
+			<br>
+		<h4>Police Department:166</h4>
+			<a href="tel:04166"><img src="images/buttons/call.png" /></a>
+			<br>
+		<h4>Police Department(Direct Line):232-2600</h4>
+			<a href="tel:0472322600"><img src="images/buttons/call.png" /></a>
+			<br>
+		<h4>Health Center:232-6055</h4>
+			<a href="tel:0472326055"><img src="images/buttons/call.png" /></a>
+			<br>
+		<h4>Mayor's Office(Tourism Office):232-4895</h4>
+			<a href="tel:0472324895"><img src="images/buttons/call.png" /></a>
+			<br>
+		<h4>Kolehiyo ng Subic(Admin):232-4897</h4>
+			<a href="tel:0472324897"><img src="images/buttons/call.png" /></a>
+	</div>
+	
+</div>
+
+<!--saint-->
+<div data-role="page" id="saint" style="background: #ffffff
+    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+	<div data-role="header" style="min-height: 70px;">
+	<a href="#info" data-icon="gear" class="ui-btn-left">Back</a>
+	<center>
+	<br>
+		<p style="font-size:20px">St. James son of Zebedee</p>
+	</center>
+	</div>
+		
+		<div data-role="content">
+		<center>
+			<img src="images/saint.jpg"/>
+		</center>
+		<h2>Feast Day: July 25</h2>
+		<p style="font-size:18px"> 
+		James, John, Peter, and Andrew were all fishermen in Bethsaida, on the north shore of the Sea of Galilee. Our Lord called to Simon Peter and Andrew and said, "Come after Me and I will make you fishers of men" (Mt. 4:19). And, then Our Lord turned to James the Greater and his brother John, and both of them instantly left their nets and followed Our Lord.
+
+St. James the Greater, along with Peter and John, was one of the few that witnessed Our Lord's Transfiguration on Mt. Tabor, the raising of the daughter of Jairus, and Our Lord’s suffering in the Garden of Gethsemane before His passion.
+
+And while St. James abandoned Our Lord during His Passion along with the other disciples, he repented and returned to the faith. And, not only that, but he went out and proclaimed the Gospel. According to legend St. James went to Spain and evangelized there for seven years. St. James and St. John asked Our Lord to be at His right-hand in Heaven, and Our Lord said they would be with Him in a far more different and wonderful way than they could have expected.
+
+St. James the Greater died a martyr for Jesus. He was killed by the sword by the order of King Herod Agrippa in c. 44 AD, and his martyrdom is the only one of the apostles that is recorded in the Bible (Acts 12:2). He was the first apostle to be murdered for the faith.
+
+Each year on July 24, many people make a pilgrimage to St. James of Compostela in Spain, the 3rd largest shrine in all of Christendom. According to legend,his body was taken by angels when he was murdered, and it was sailed in an unattended boat to Spain where a massive rock closed around it. In the ninth century, a star in the sky revealed the location of the tomb of St. James, and that was were the Shrine was built. Below the altar rests the remains of St. James the Greater. Some people do not believe the remains are truly his; however, Pope Leo XIII in 1884 in Omnipotens Deus accepted the authenticity of the relics at Compostela.
+		</p>
+		</div>
+
+
+</div>
+
+<!--directory-->
+<div data-role="page" id="dir" style="background: #ffffff
+    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+	<div data-role="header"  style="min-height: 70px;">
+	
+	<a href="#main" data-icon="gear" class="ui-btn-left">Back</a>
+	<center>
+	<br>
+		<p style="font-size:30px">Directory</p>
+	</center>
+	</div>
+	
+	<div data-role="content">
+	<ul data-role="listview" data-inset="true">
+			<li><a href="#resorts"  style=" font-size:20px;">Hotel and Resorts</a></li> 
+			<li><a href="#resto"  style=" font-size:20px;">Dining and Nightlife</a></li> 
+			<li><a href="#resto"  style=" font-size:20px;">Dining and Nightlife</a></li> 
+		</ul> 
+	</div>
+</div>
+
+
+	
+
+<!--info-->
+<div data-role="page" id="info" style="background: #ffffff
+    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+	<div data-role="header"  style="min-height: 70px;">
+	<a href="#main" data-icon="gear" class="ui-btn-left">Back</a>
+	<center>
+	<br>
+		<p style="font-size:30px">Information</p>
+	</center>
+	</div>
+	
+	<div data-role="content" align="center">
+	
+			<a href="#pop"><img src="images/buttons/brgy.jpg"/></a><br><br>
+			<a href="maps.html" rel="external" ><img src="images/buttons/map.jpg"/></a><br><br>
+			<a href="#saint"><img src="images/buttons/saint.jpg"/></a> <br><br>
+			<a href="#ety"><img src="images/buttons/ety.jpg"/></a><br><br>
+		
+	</div>
+</div>
+
+<div data-role="page" id="ety" style="background: #ffffff
+    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+	<div data-role="header" style="min-height: 70px;">
+	<a href="#info" data-icon="gear" class="ui-btn-left">Back</a>
+	<center>
+	<br>
+		<p style="font-size:30px">How "Subic" got its name?</p>
+	</center>
+	</div>
+
+	<div data-role="content">
+		<p style="font-size:20px">The town's early name is "Hubek" among the native inhabitants of the area - the Zambales - which means "head of a plow". The missionary fathers mispronounced "Hubek" as "Subiq".By the time of the American occupation of Subic, the Yankees mispronounced "Subiq" into "Subig". Eventually, "Subig" reverted to "Subiq", but the letter 'q' was replaced with letter 'c', hence the name "Subic".</p>
+	
+	</div>
+	
+</div>
+
+<!--population-->
+<div data-role="page" id="pop" style="background: #ffffff
+    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+	<div data-role="header" style="min-height: 70px;">
+	<a href="#info" data-icon="gear" class="ui-btn-left">Back</a>
+	<center>
+	<br>
+		<p style="font-size:25px">Population Information</p>
+	</center>
+	</div>
+
+	<div data-role="content">
+	<center>
+		<h3 style="font-size:20px">2010 Census and Housing Population</h3><br>
+		<h1 style="font-size:20px">SUBIC</h1>
+		<br>
+			
+		<table >
+		<thead>
+			<tr >
+				<th>Barangay</th>
+				<th>Population</th>
+			</tr>
+		</thead>
+		<tbody style="font-size:20px">
+			<tr>
+				<td>Aningway-Sacatihan</td>
+				<td>4,440</td>
+			</tr>
+			<tr>
+				<td>Asinan Poblacion</td>
+				<td>883</td>
+			</tr>
+			<tr>
+				<td>Asinan Proper</td>
+				<td>6,335</td>
+			</tr>
+			<tr>
+				<td>Baraca-Camachile</td>
+				<td>2,805</td>
+			</tr>
+			<tr>
+				<td>Batiawan</td>
+				<td>1,015</td>
+			</tr>
+			<tr>
+				<td>Calapacuan</td>
+				<td>13,570</td>
+			</tr>
+			<tr>
+				<td>Calapandayan</td>
+				<td>9,698</td>
+			</tr>
+			<tr>
+				<td>Cawag</td>
+				<td>11,979</td>
+			</tr>
+			<tr>
+				<td>Ilwas</td>
+				<td>3,179</td>
+			</tr>
+			<tr>
+				<td>Mangan-Vaca</td>
+				<td>8,068</td>
+			</tr>
+			<tr>
+				<td>Matain</td>
+				<td>7,777</td>
+			</tr>
+			<tr>
+				<td>Naugsol</td>
+				<td>2,046</td>
+			</tr>
+			<tr>
+				<td>Pamatawan</td>
+				<td>3,817</td>
+			</tr>
+			<tr>
+				<td>San Isidro</td>
+				<td>6,741</td>
+			</tr>
+			<tr>
+				<td>Sto. Tomas</td>
+				<td>5,504</td>
+			</tr>
+			<tr>
+				<td>Wawandue</td>
+				<td>1,867</td>
+			</tr>
+			<tr>
+				<th>TOTAL POPULATION:</th>
+				<th>89,724</th>
+			</tr>
+		</tbody>
+	</table>
+</center>
+</div>
+</div>
+
+<!--About-->
+<div data-role="page" id="about" style="background: #ffffff
+    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+	<div data-role="header" style="min-height: 70px;">
+	<a href="#main" data-icon="gear" class="ui-btn-left">Back</a>
+	<center>
+	<br>
+		<p style="font-size:30px">SubicTacular!</p>
+	</center>
+	</div>
+	
+		<div data-role="content">
+		<center>
+		<img src="images/logo5.png"/>
+		</center>
+			<div data-role="collapsible" data-content-theme="b" id="my-collaspible">
+    <h4>About SubicTacular!</h4>
+    <p>SubicTacular! is an app that aims to promote Subic Town as an accessible and affordable recreational haven for the leisure-seekers.<br>
+	The app features a directory of local attractions and establishments around Subic, photo gallery of sceneries and recent events Subic
+	<br>
+	This mobile application is owned and monitored by the Local Government of Subic and is developed and maintained by Team Terabyte as part of their college thesis.</p>
+</div>
+<div data-role="collapsible" data-content-theme="c" id="my-collaspible">
+    <h4>Credits</h4>
+    <p>Special Thanks to the following people who provided some photos and information for SubicTacular!:<br>
+	Deorina Canlas<br>
+	Aga Manalansan<br>
+	Patrick Beato<br>
+	Jasnah de Santos<br>
+	Michael John Mayo <br>
+<a href="http://www.facebook.com/LAHAMkoangCIBUS">Laham Ko ang Cibus (Facebook Page) </a>	<br>
+</p>
+</div>
+		</div>
+		</div>
+		
+		
+<!--DIRECTORY-->
+
+<!--Hotel and Resorts-->
+<div data-role="page" id="resorts" style="background: #ffffff
+    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+	<div data-role="header"  style="min-height: 70px;">
+	
+	<a href="#dir" data-icon="gear" class="ui-btn-left">Back</a>
+	<center>
+	<br>
+		<p style="font-size:15px">Hotel and Resorts</p>
+	</center>
+	</div>
+	
+	<div data-role="content">
+	<ul data-role="listview" data-inset="true">
+			<li><a href="#rock"  style=" font-size:11.5px;">White Rock Beach Resort and Waterpark</a></li> 
+			<li><a href="#krrels"  style=" font-size:11.5px;">Krrels Family Resort</a></li> 
+			<li><a href="#sm"  style=" font-size:11.5px;">Sun Marina Beach Resort</a></li> 
+			<li><a href="#Gallery1"  style=" font-size:11.5px;">Club Morrocco Resort</a></li> 
+			<li><a href="#Gallery1"  style=" font-size:11.5px;">Aplaya Del Subic</a></li> 
+			<li><a href="#Gallery1"  style=" font-size:11.5px;">Apo Gulf Resort</a></li> 
+			<li><a href="#Gallery1"  style=" font-size:11.5px;">Hawaiian Garden Resort</a></li> 
+		</ul> 
+	</div>
+</div>
+
+<!--Dining-->
+<div data-role="page" id="resto" style="background: #ffffff
+    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+	<div data-role="header"  style="min-height: 70px;">
+	
+	<a href="#dir" data-icon="gear" class="ui-btn-left">Back</a>
+	<center>
+	<br>
+		<p style="font-size:25px">Hotel and Resorts</p>
+	</center>
+	</div>
+	
+	<div data-role="content">
+	<ul data-role="listview" data-inset="true">
+			<li><a href="#hydra"  style=" font-size:20px;">Hydra Restobar at the Pond</a></li> 
+			<li><a href="#Gallery1"  style=" font-size:20px;">Sandoval's Subic Jam</a></li> 
+			<li><a href="#Gallery1"  style=" font-size:20px;">Subic Ay Restaurant and Inn</a></li> 
+			<li><a href="#Gallery1"  style=" font-size:20px;">Empire Restaurant and KTV</a></li> 
+			<li><a href="#jobee"  style=" font-size:20px;">Jolibee </a></li> 
+			<li><a href="#chow"  style=" font-size:20px;">Chowking </a></li> 
+			<li><a href="#inasal"  style=" font-size:20px;">Mang Inasal</a></li> 
+		</ul> 
+	</div>
+</div>
+
+<!--Others-->
+<div data-role="page" id="Others" style="background: #ffffff
+    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+	<div data-role="header"  style="min-height: 70px;">
+	
+	<a href="#dir" data-icon="gear" class="ui-btn-left">Back</a>
+	<center>
+	<br>
+		<p style="font-size:25px">Other Attractions</p>
+	</center>
+	</div>
+	
+	<div data-role="content">
+	<ul data-role="listview" data-inset="true">
+			<li><a href="#Gallery1"  style=" font-size:20px;">Saint James Parish Church</a></li> 
+			<li><a href="#Gallery1"  style=" font-size:20px;">Garden of Prayer</a></li>
+		</ul> 
+	</div>
+</div>
+
+<!--RESORTS-->
+
+<!--WHITE ROCK-->
+ <div data-role="page" id="rock" style="background: #ffffff
+    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+	<div data-role="header"  style="min-height: 70px;">
+	
+	<a href="#dir" data-icon="gear" class="ui-btn-right">Back</a>
+	<center>
+	<br>
+		<p style="font-size:18px">White Rock Beach Resort and Waterpark</p>
+	</center>
+	</div>
+	
+	<div data-role="content">
+	<center>
+	<img src="images/whiterock/1.jpg "/>
+	</center>
+	<br>
+	<br>
+	<p style="font-size:13px; font-weight:700; color:#000000" >Location: Matain, Subic, Zambales 2209<p>
+	 	<p style="font-size:13px; font-weight:700; color:#000000">Contact Information:<p>
+			<p style="font-size:13px; font-weight:700; color:#000000">Phone: (047) 232-2857/ (02) 584-4491 <p>
+			<p style="font-size:13px; font-weight:700; color:#000000">Mobile: 0922-813-3630/ 0917-863-0844<p>
+			<p style="font-size:13px; font-weight:700; color:#000000">Email: reservations@whiterock.com.ph <p>
+			<p style="font-size:13px; font-weight:700; color:#000000">Website: www.whiterock.com.ph <p>
+			<p style="font-size:13px; font-weight:700; color:#000000">Facebook: www.facebook.com/WhiteRockWaterpark<p><br>
+			
+			<table>
+			
+		<thead>
+			<tr>
+
+				<th><a href="tel:09228133630"><img src="images/buttons/col.png"/></a></th>
+				<th><a href="sms:09228133630"><img src="images/buttons/sms.png"/></th>
+				<th><a href="mailto:reservations@whiterock.com.ph"><img src="images/buttons/email.png"/></th>
+				<th><a href="http:www.whiterock.com.ph/ " target="_blank"><img src="images/buttons/web.png"/></th>
+			</tr>
+			
+			</table>
+		
+	</div>
+	<div data-role="footer">
+	
+			<div data-role="navbar">
+					<ul>
+					<li><a href="#wrmap">Map</a></li>
+					<li><a href="#whitegal">Gallery</a></li>
+					</ul>
+			</div>
+		
+	</div>
+	</div>
+		
+<!--whiterock gallery-->
+<div data-role="page" id="whitegal" class="gallery-page">
+
+	<div data-role="header" style="min-height: 70px;">
+	<a href="#rock" data-icon="gear" class="ui-btn-right">Back</a>
+	<center>
+	<br>
+		<p style="font-size:30px ">White Rock Beach Resort and Waterpark</p>
+	</center>
+	</div>
+
+	<div data-role="content">	
+		<ul class="gallery">
+			<li><a href="images/whiterock/1.jpg" rel="external"><img src="images/whiterock/thumbs/1.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/2.jpg" rel="external"><img src="images/whiterock/thumbs/2.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/3.jpg" rel="external"><img src="images/whiterock/thumbs/3.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/4.jpg" rel="external"><img src="images/whiterock/thumbs/4.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/5.jpg" rel="external"><img src="images/whiterock/thumbs/5.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/6.jpg" rel="external"><img src="images/whiterock/thumbs/6.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/7.jpg" rel="external"><img src="images/whiterock/thumbs/7.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/8.jpg" rel="external"><img src="images/whiterock/thumbs/8.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/9.jpg" rel="external"><img src="images/whiterock/thumbs/9.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/10.jpg" rel="external"><img src="images/whiterock/thumbs/10.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/11.jpg" rel="external"><img src="images/whiterock/thumbs/11.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/12.jpg" rel="external"><img src="images/whiterock/thumbs/12.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/13.jpg" rel="external"><img src="images/whiterock/thumbs/13.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/14.jpg" rel="external"><img src="images/whiterock/thumbs/14.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/15.jpg" rel="external"><img src="images/whiterock/thumbs/15.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/16.jpg" rel="external"><img src="images/whiterock/thumbs/16.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/17.jpg" rel="external"><img src="images/whiterock/thumbs/17.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/18.jpg" rel="external"><img src="images/whiterock/thumbs/18.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/19.jpg" rel="external"><img src="images/whiterock/thumbs/19.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/20.jpg" rel="external"><img src="images/whiterock/thumbs/20.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/21.jpg" rel="external"><img src="images/whiterock/thumbs/21.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/22.jpg" rel="external"><img src="images/whiterock/thumbs/22.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/whiterock/23.jpg" rel="external"><img src="images/whiterock/thumbs/23.jpg" alt="Image 001" /></a></li>
+		
+		</ul>
+	</div>
+
+</div>
+	
+
+<!--KRRELS-->
+ <div data-role="page" id="krrels" style="background: #ffffff
+    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+	<div data-role="header"  style="min-height: 70px;">
+	
+	<a href="#dir" data-icon="gear" class="ui-btn-right">Back</a>
+	<center>
+	<br>
+		<p style="font-size:18px">Krrels Family Resort</p>
+	</center>
+	</div>
+	
+	<div data-role="content">
+	<center>
+	<img src="images/krrels/logo.jpg "/>
+	</center>
+	<br>
+	<br>
+	<p style="font-size:13px; font-weight:700; color:#000000" >Location: Purok 4, Sitio Ibayo, San Isidro, Subic, Zambales 2209<p>
+	 	<p style="font-size:13px; font-weight:700; color:#000000">Contact Information:<p>
+			<p style="font-size:13px; font-weight:700; color:#000000">Phone: (047) 232-5162<p>
+			<p style="font-size:13px; font-weight:700; color:#000000">Mobile: 0932-132-6608<p>
+			<p style="font-size:13px; font-weight:700; color:#000000">Facebook: www.facebook.com/krrels.familyresort<p><br>
+			
+			<table>
+		<thead>
+			<tr>
+				<th><a href="tel:09321326608"><img src="images/buttons/col.png"/></a></th>
+				<th><a href="sms:09321326608"><img src="images/buttons/sms.png"/></th>
+			</tr>
+			</table>
+	</div>
+	<div data-role="footer">
+			<div data-role="navbar">
+					<ul>
+					<li><a href="#wrmap">Map</a></li>
+					<li><a href="#kgal">Gallery</a></li>
+					</ul>
+			</div>
+	</div>
+	</div>
+		
+<!--krrels gallery-->
+<div data-role="page" id="kgal" class="gallery-page">
+
+	<div data-role="header" style="min-height: 70px;">
+	<a href="#rock" data-icon="gear" class="ui-btn-right">Back</a>
+	<center>
+	<br>
+		<p style="font-size:30px ">Krrels Family Resort</p>
+	</center>
+	</div>
+
+	<div data-role="content">	
+		<ul class="gallery">
+			<li><a href="images/krrels/1.jpg" rel="external"><img src="images/krrels/thumbs/1.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/krrels/2.jpg" rel="external"><img src="images/krrels/thumbs/2.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/krrels/3.jpg" rel="external"><img src="images/krrels/thumbs/3.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/krrels/4.jpg" rel="external"><img src="images/krrels/thumbs/4.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/krrels/5.jpg" rel="external"><img src="images/krrels/thumbs/5.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/krrels/6.jpg" rel="external"><img src="images/krrels/thumbs/6.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/krrels/7.jpg" rel="external"><img src="images/krrels/thumbs/7.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/krrels/8.jpg" rel="external"><img src="images/krrels/thumbs/8.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/krrels/9.jpg" rel="external"><img src="images/krrels/thumbs/9.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/krrels/10.jpg" rel="external"><img src="images/krrels/thumbs/10.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/krrels/11.jpg" rel="external"><img src="images/krrels/thumbs/11.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/krrels/12.jpg" rel="external"><img src="images/krrels/thumbs/12.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/krrels/13.jpg" rel="external"><img src="images/krrels/thumbs/13.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/krrels/14.jpg" rel="external"><img src="images/krrels/thumbs/14.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/krrels/15.jpg" rel="external"><img src="images/krrels/thumbs/15.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/krrels/16.jpg" rel="external"><img src="images/krrels/thumbs/16.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/krrels/17.jpg" rel="external"><img src="images/krrels/thumbs/17.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/krrels/18.jpg" rel="external"><img src="images/krrels/thumbs/18.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/krrels/19.jpg" rel="external"><img src="images/krrels/thumbs/19.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/krrels/20.jpg" rel="external"><img src="images/krrels/thumbs/20.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/krrels/21.jpg" rel="external"><img src="images/krrels/thumbs/21.jpg" alt="Image 001" /></a></li>
+	
+
+		</ul>
+	</div>
+
+</div>
+	
+	
+</div>
+
+<!--SUN MARINA-->
+ <div data-role="page" id="sm" style="background: #ffffff
+    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+	<div data-role="header"  style="min-height: 70px;">
+	
+	<a href="#dir" data-icon="gear" class="ui-btn-right">Back</a>
+	<center>
+	<br>
+		<p style="font-size:18px">Sun Marina Beach Resort</p>
+	</center>
+	</div>
+	
+	<div data-role="content">
+	<center>
+	<img src="images/sm/logo.jpg "/>
+	</center>
+	<br>
+	<br>
+	<p style="font-size:13px; font-weight:700; color:#000000" >Location: Sitio Nagtulong, Cawag Subic, Zambales 2209<p>
+	 	<p style="font-size:13px; font-weight:700; color:#000000">Contact Information:<p>
+			<p style="font-size:13px; font-weight:700; color:#000000">Mobile: 0907-908-4592<p>
+			<p style="font-size:13px; font-weight:700; color:#000000">Website: www.sunmarinabeachresort.weebly.com<p>
+			<p style="font-size:13px; font-weight:700; color:#000000">www.facebook.com/SunMarinaBeachAndResort<p><br>
+			
+			<table>
+		<thead>
+			<tr>
+				<th><a href="tel:09079084592"><img src="images/buttons/col.png"/></a></th>
+				<th><a href="sms:09079084592"><img src="images/buttons/sms.png"/></th>
+				<th><a href="http:www.sunmarinabeachresort.weebly.com/ " target="_blank"><img src="images/buttons/web.png"/></th>
+			</tr>
+			</tr>
+			</table>
+	</div>
+	<div data-role="footer">
+			<div data-role="navbar">
+					<ul>
+					<li><a href="#wrmap">Map</a></li>
+					<li><a href="#smgal">Gallery</a></li>
+					</ul>
+			</div>
+	</div>
+	</div>
+		
+<!--sun marina gallery-->
+<div data-role="page" id="smgal" class="gallery-page">
+
+	<div data-role="header" style="min-height: 70px;">
+	<a href="#rock" data-icon="gear" class="ui-btn-right">Back</a>
+	<center>
+	<br>
+		<p style="font-size:30px ">Sun Marina Beach Resort</p>
+	</center>
+	</div>
+
+	<div data-role="content">	
+		<ul class="gallery">
+			<li><a href="images/sm/1.jpg" rel="external"><img src="images/sm/thumbs/1.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/sm/2.jpg" rel="external"><img src="images/sm/thumbs/2.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/sm/3.jpg" rel="external"><img src="images/sm/thumbs/3.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/sm/4.jpg" rel="external"><img src="images/sm/thumbs/4.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/sm/5.jpg" rel="external"><img src="images/sm/thumbs/5.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/sm/6.jpg" rel="external"><img src="images/sm/thumbs/6.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/sm/7.jpg" rel="external"><img src="images/sm/thumbs/7.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/sm/8.jpg" rel="external"><img src="images/sm/thumbs/8.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/sm/9.jpg" rel="external"><img src="images/sm/thumbs/9.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/sm/10.jpg" rel="external"><img src="images/sm/thumbs/10.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/sm/11.jpg" rel="external"><img src="images/sm/thumbs/11.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/sm/12.jpg" rel="external"><img src="images/sm/thumbs/12.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/sm/13.jpg" rel="external"><img src="images/sm/thumbs/13.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/sm/14.jpg" rel="external"><img src="images/sm/thumbs/14.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/sm/15.jpg" rel="external"><img src="images/sm/thumbs/15.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/sm/16.jpg" rel="external"><img src="images/sm/thumbs/16.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/sm/17.jpg" rel="external"><img src="images/sm/thumbs/17.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/sm/18.jpg" rel="external"><img src="images/sm/thumbs/18.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/sm/19.jpg" rel="external"><img src="images/sm/thumbs/19.jpg" alt="Image 001" /></a></li>
+
+	
+
+		</ul>
+	</div>
+
+</div>
+	
+	
+</div>
+
+<!--RESTOS-->
+
+<!--HYDRA-->
+<div data-role="page" id="hydra" style="background: #ffffff
+    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+	<div data-role="header"  style="min-height: 70px;">
+	
+	<a href="#dir" data-icon="gear" class="ui-btn-right">Back</a>
+	<center>
+	<br>
+		<p style="font-size:25px">Hydra Restobar at the Pond</p>
+	</center>
+	</div>
+	
+	<div data-role="content">
+	<center>
+	<img src="images/hydra/1.jpg "/>
+	</center>
+	<br>
+	<br>
+	<p style="font-size:13px; font-weight:700; color:#000000" >Location: Purok 1, Mangan-Vaca, Subic, Zambales 2209<p>
+	<p style="font-size:13px; font-weight:700; color:#000000" >Operating Hours: 6:00 pm-3:00 am Everyday<p>
+	 	<p style="font-size:13px; font-weight:700; color:#000000">Contact Information:<p>
+			<p style="font-size:13px; font-weight:700; color:#000000">Phone: 09193954553 <p>
+			<p style="font-size:13px; font-weight:700; color:#000000">Email: christnedeperio@rocketmail.com <p><br>
+			
+			<table>
+		<thead>
+			<tr>
+				<th><a href="tel:09193954553"><img src="images/buttons/col.png"/></a></th>
+				<th><a href="sms:09193954553"><img src="images/buttons/sms.png"/></th>
+				<th><a href="mailto:christnedeperio@rocketmail.com"><img src="images/buttons/email.png"/></th>
+			</tr>
+			</table>
+	</div>
+	
+	<div data-role="footer">
+			<div data-role="navbar">
+					<ul>
+					<li><a href="map.html">Map</a></li>
+					<li><a href="#hydragal">Gallery</a></li>
+					</ul>
+			</div>
+	</div>
+</div>
+
+<!--hydra gallery-->
+<div data-role="page" id="hydragal" class="gallery-page">
+
+	<div data-role="header" style="min-height: 70px;">
+	<a href="#hydra" data-icon="gear" class="ui-btn-right">Back</a>
+	<center>
+	<br>
+		<p style="font-size:30px ">Hydra Restobar</p>
+	</center>
+	</div>
+
+	<div data-role="content">	
+		<ul class="gallery">
+			<li><a href="images/hydra/1.jpg" rel="external"><img src="images/hydra/thumbs/1.jpg" alt="Image 001" /></a></li>
+			<li><a href="images/hydra/2.jpg" rel="external"><img src="images/hydra/thumbs/2.jpg" alt="Image 002" /></a></li>
+			<li><a href="images/hydra/3.jpg" rel="external"><img src="images/hydra/thumbs/3.jpg" alt="Image 003" /></a></li>
+			<li><a href="images/hydra/4.jpg" rel="external"><img src="images/hydra/thumbs/4.jpg" alt="Image 004" /></a></li>
+			<li><a href="images/hydra/5.jpg" rel="external"><img src="images/hydra/thumbs/5.jpg" alt="Image 005" /></a></li>
+			<li><a href="images/hydra/6.jpg" rel="external"><img src="images/hydra/thumbs/6.jpg" alt="Image 006" /></a></li>
+			<li><a href="images/hydra/7.jpg" rel="external"><img src="images/hydra/thumbs/7.jpg" alt="Image 007" /></a></li>
+			<li><a href="images/hydra/8.jpg" rel="external"><img src="images/hydra/thumbs/8.jpg" alt="Image 008" /></a></li>
+			<li><a href="images/hydra/9.jpg" rel="external"><img src="images/hydra/thumbs/9.jpg" alt="Image 009" /></a></li>
+			<li><a href="images/hydra/10.jpg" rel="external"><img src="images/hydra/thumbs/10.jpg" alt="Image 010" /></a></li>
+			<li><a href="images/hydra/11.jpg" rel="external"><img src="images/hydra/thumbs/11.jpg" alt="Image 011" /></a></li>
+			<li><a href="images/hydra/12.jpg" rel="external"><img src="images/hydra/thumbs/12.jpg" alt="Image 012" /></a></li>
+			<li><a href="images/hydra/13.jpg" rel="external"><img src="images/hydra/thumbs/13.jpg" alt="Image 013" /></a></li>
+			<li><a href="images/hydra/14.jpg" rel="external"><img src="images/hydra/thumbs/14.jpg" alt="Image 014" /></a></li>
+			<li><a href="images/hydra/15.jpg" rel="external"><img src="images/hydra/thumbs/15.jpg" alt="Image 015" /></a></li>
+			<li><a href="images/hydra/16.jpg" rel="external"><img src="images/hydra/thumbs/16.jpg" alt="Image 016" /></a></li>
+			<li><a href="images/hydra/17.jpg" rel="external"><img src="images/hydra/thumbs/17.jpg" alt="Image 017" /></a></li>
+		</ul>
+	</div>
+
+</div>
+
+<!--JOLLIBEE-->
+<div data-role="page" id="jobee" style="background: #ffffff
+    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+	<div data-role="header"  style="min-height: 70px;">
+	
+	<a href="#dir" data-icon="gear" class="ui-btn-right">Back</a>
+	<center>
+	<br>
+		<p style="font-size:25px">Jollibee</p>
+	</center>
+	</div>
+	
+	<div data-role="content">
+	<center>
+	<img src="images/hydra/1.jpg "/>
+	</center>
+	<br>
+	<br>
+	<p style="font-size:13px; font-weight:700; color:#000000" >Location: National Road, Brgy. Baraca, Subic , Zambales 2209<p>
+	<p style="font-size:13px; font-weight:700; color:#000000" >Operating Hours: 6:00 AM to 10:00 PM<p>
+	 	<p style="font-size:13px; font-weight:700; color:#000000">Contact Information:<p>
+			<p style="font-size:13px; font-weight:700; color:#000000">Phone: (047) 232-6091<p>
+			<p style="font-size:13px; font-weight:700; color:#000000">Mobile: 0920-983-3593<p>
+			
+			<table>
+		<thead>
+			<tr>
+				<th><a href="tel:09209833593"><img src="images/buttons/col.png"/></a></th>
+				<th><a href="sms:09209833593"><img src="images/buttons/sms.png"/></th>
+			</tr>
+			</table>
+	</div>
+	
+	<div data-role="footer">
+			<div data-role="navbar">
+					<ul>
+					<li><a href="map.html">Map</a></li>
+					<li><a href="#hydragal">Gallery</a></li>
+					</ul>
+			</div>
+	</div>
+</div>
+
+<!--MANG INASAL-->
+<div data-role="page" id="inasal" style="background: #ffffff
+    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+	<div data-role="header"  style="min-height: 70px;">
+	
+	<a href="#dir" data-icon="gear" class="ui-btn-right">Back</a>
+	<center>
+	<br>
+		<p style="font-size:25px">Mang Inasal</p>
+	</center>
+	</div>
+	
+	<div data-role="content">
+	<center>
+	<img src="images/hydra/1.jpg "/>
+	</center>
+	<br>
+	<br>
+	<p style="font-size:13px; font-weight:700; color:#000000" >Location: 03 National Hi-Way Baraca Subic, Zambales 2209<p>
+	 	<p style="font-size:13px; font-weight:700; color:#000000">Contact Information:<p>
+			<p style="font-size:13px; font-weight:700; color:#000000">Mobile: 0932-880-6263<p>
+			
+			<table>
+		<thead>
+			<tr>
+				<th><a href="tel:09328806263"><img src="images/buttons/col.png"/></a></th>
+				<th><a href="sms:09209833593"><img src="images/buttons/sms.png"/></th>
+			</tr>
+			</table>
+	</div>
+	
+	<div data-role="footer">
+			<div data-role="navbar">
+					<ul>
+					<li><a href="map.html">Map</a></li>
+					<li><a href="#hydragal">Gallery</a></li>
+					</ul>
+			</div>
+	</div>
+</div>
+
+<!--CHOWKING-->
+<div data-role="page" id="chow" style="background: #ffffff
+    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+	<div data-role="header"  style="min-height: 70px;">
+	
+	<a href="#dir" data-icon="gear" class="ui-btn-right">Back</a>
+	<center>
+	<br>
+		<p style="font-size:25px">Chowking</p>
+	</center>
+	</div>
+	
+	<div data-role="content">
+	<center>
+	<img src="images/hydra/1.jpg "/>
+	</center>
+	<br>
+	<br>
+	<p style="font-size:13px; font-weight:700; color:#000000" >Location: National Highway, Purok 1, Brgy. Baraca- Camachile, Subic, Zambales 2209<p>
+
+
+			
+			<table>
+		<thead>
+			<tr>
+
+			</tr>
+			</table>
+	</div>
+	
+	<div data-role="footer">
+			<div data-role="navbar">
+					<ul>
+					<li><a href="map.html">Map</a></li>
+					<li><a href="#hydragal">Gallery</a></li>
+					</ul>
+			</div>
+	</div>
+</div>
+
+<!--OTHERS-->
+
+<!--GARDEN OF PRAYER-->
+<div data-role="page" id="grotto" style="background: #ffffff
+    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+	<div data-role="header"  style="min-height: 70px;">
+	
+	<a href="#dir" data-icon="gear" class="ui-btn-right">Back</a>
+	<center>
+	<br>
+		<p style="font-size:25px">Garden of Prayer</p>
+	</center>
+	</div>
+	
+	<div data-role="content">
+	<center>
+	<img src="images/hydra/1.jpg "/>
+	</center>
+	<br>
+	<br>
+	<p style="font-size:13px; font-weight:700; color:#000000" >Location: National Highway, Aningway, Subic, Zambales 2209<p>
+				<p style="font-size:13px; font-weight:700; color:#000000" >Contact Information:<p>
+	<p style="font-size:13px; font-weight:700; color:#000000" >Telephone: (047) 232-3273<p>
+	
+			<table>
+		<thead>
+			<tr>
+
+			</tr>
+			</table>
+	</div>
+	
+	<div data-role="footer">
+			<div data-role="navbar">
+					<ul>
+					<li><a href="map.html">Map</a></li>
+					<li><a href="#hydragal">Gallery</a></li>
+					</ul>
+			</div>
+	</div>
+</div>
+
+
+<!--DIRECTORY MAP-->
+
+<!--WHITE ROCK-->
+<div data-role="page" id="wrmap">
+	<div data-role="header" style="min-height: 70px;">
+	<a href="#rock" data-icon="gear" class="ui-btn-right">Back</a>
+	</div>
+	</div>
+	
+	<!--SIDE PANEL-->
+
+	
+	
+</body>
+</html>
