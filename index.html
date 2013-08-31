@@ -52,7 +52,7 @@
 							photoSwipeInstance = PhotoSwipe.getInstance(currentPage.attr('id'));
 
 						if (typeof photoSwipeInstance != "undefined" && photoSwipeInstance != null)  {
-							PhotoSwipe.detatch(photoSwipeInstance);
+							photoSwipe.unsetActivateInstance(photoSwipeInstance);
 						}
 						
 						return true;
@@ -141,7 +141,7 @@ body .ui-body-b, body .ui-overlay-b { text-shadow:0 0 0; }
 	<a href="#info" data-icon="gear" class="ui-btn-left">Back</a>
 	<center>
 	<br>
-		<p style="font-size:20px">St. James son of Zebedee</p>
+		<p style="font-size:18px">St. James son of Zebedee</p>
 	</center>
 	</div>
 		
@@ -152,13 +152,13 @@ body .ui-body-b, body .ui-overlay-b { text-shadow:0 0 0; }
 		<h2>Feast Day: July 25</h2>
 		<p style="font-size:18px"> 
 		James, John, Peter, and Andrew were all fishermen in Bethsaida, on the north shore of the Sea of Galilee. Our Lord called to Simon Peter and Andrew and said, "Come after Me and I will make you fishers of men" (Mt. 4:19). And, then Our Lord turned to James the Greater and his brother John, and both of them instantly left their nets and followed Our Lord.
-
+<br>
 St. James the Greater, along with Peter and John, was one of the few that witnessed Our Lord's Transfiguration on Mt. Tabor, the raising of the daughter of Jairus, and Our Lord’s suffering in the Garden of Gethsemane before His passion.
-
+<br>
 And while St. James abandoned Our Lord during His Passion along with the other disciples, he repented and returned to the faith. And, not only that, but he went out and proclaimed the Gospel. According to legend St. James went to Spain and evangelized there for seven years. St. James and St. John asked Our Lord to be at His right-hand in Heaven, and Our Lord said they would be with Him in a far more different and wonderful way than they could have expected.
-
+<br>
 St. James the Greater died a martyr for Jesus. He was killed by the sword by the order of King Herod Agrippa in c. 44 AD, and his martyrdom is the only one of the apostles that is recorded in the Bible (Acts 12:2). He was the first apostle to be murdered for the faith.
-
+<br>
 Each year on July 24, many people make a pilgrimage to St. James of Compostela in Spain, the 3rd largest shrine in all of Christendom. According to legend,his body was taken by angels when he was murdered, and it was sailed in an unattended boat to Spain where a massive rock closed around it. In the ninth century, a star in the sky revealed the location of the tomb of St. James, and that was were the Shrine was built. Below the altar rests the remains of St. James the Greater. Some people do not believe the remains are truly his; however, Pope Leo XIII in 1884 in Omnipotens Deus accepted the authenticity of the relics at Compostela.
 		</p>
 		</div>
@@ -217,7 +217,7 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 	<a href="#info" data-icon="gear" class="ui-btn-left">Back</a>
 	<center>
 	<br>
-		<p style="font-size:30px">How "Subic" got its name?</p>
+		<p style="font-size:20px">How "Subic" got its name?</p>
 	</center>
 	</div>
 
@@ -235,7 +235,7 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 	<a href="#info" data-icon="gear" class="ui-btn-left">Back</a>
 	<center>
 	<br>
-		<p style="font-size:25px">Population Information</p>
+		<p style="font-size:20px">Population Information</p>
 	</center>
 	</div>
 
@@ -399,7 +399,7 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 	<a href="#dir" data-icon="gear" class="ui-btn-left">Back</a>
 	<center>
 	<br>
-		<p style="font-size:25px">Dining and Nightlife</p>
+		<p style="font-size:23px">Dining and Nightlife</p>
 	</center>
 	</div>
 	
@@ -424,7 +424,7 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 	<a href="#dir" data-icon="gear" class="ui-btn-left">Back</a>
 	<center>
 	<br>
-		<p style="font-size:25px">OtAttractions</p>
+		<p style="font-size:25px">Attractions</p>
 	</center>
 	</div>
 	
@@ -446,7 +446,7 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 	<a href="#resorts" data-icon="gear" class="ui-btn-right">Back</a>
 	<center>
 	<br>
-		<p style="font-size:18px">White Rock Beach Resort and Waterpark</p>
+		<p style="font-size:15px">White Rock Beach Resort and Waterpark</p>
 	</center>
 	</div>
 	
@@ -483,7 +483,7 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 	
 			<div data-role="navbar">
 					<ul>
-					<li><a href="#wrmap">Map</a></li>
+					<li><a href="maps/whiterock.html" rel="external">Map</a></li>
 					<li><a href="#whitegal">Gallery</a></li>
 					</ul>
 			</div>
@@ -498,7 +498,7 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 	<a href="#rock" data-icon="gear" class="ui-btn-right">Back</a>
 	<center>
 	<br>
-		<p style="font-size:30px ">White Rock Beach Resort and Waterpark</p>
+		<p style="font-size:18px ">White Rock Beach Resort and Waterpark</p>
 	</center>
 	</div>
 
@@ -557,20 +557,31 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 			<p style="font-size:13px; font-weight:700; color:#000000">Phone: (047) 232-5162</p>
 			<p style="font-size:13px; font-weight:700; color:#000000">Mobile: 0932-132-6608</p>
 			<p style="font-size:13px; font-weight:700; color:#000000">Facebook: www.facebook.com/krrels.familyresort</p><br>
+		
 			
 			<table>
-		<thead>
+		
 			<tr>
 				<th><a href="tel:09321326608"><img src="images/buttons/col.png"/></a></th>
 				<th><a href="sms:09321326608"><img src="images/buttons/sms.png"/></th>
 				<th><a href="https://www.facebook.com/krrels.familyresort" target="_blank"><img src="images/buttons/fb.png"/></th>
+				
+		
 			</tr>
+			
 			</table>
+		
 	</div>
+
+	<br>
+	<br>
+	<br>
+	
 	<div data-role="footer">
+	
 			<div data-role="navbar">
 					<ul>
-					<li><a href="#wrmap">Map</a></li>
+					<li><a href="maps/krrels.html" rel="external">Map</a></li>
 					<li><a href="#kgal">Gallery</a></li>
 					</ul>
 			</div>
@@ -581,10 +592,10 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 <div data-role="page" id="kgal" class="gallery-page">
 
 	<div data-role="header" style="min-height: 70px;">
-	<a href="#rock" data-icon="gear" class="ui-btn-right">Back</a>
+	<a href="#krrels" data-icon="gear" class="ui-btn-right">Back</a>
 	<center>
 	<br>
-		<p style="font-size:30px ">Krrels Family Resort</p>
+		<p style="font-size:18px ">Krrels Family Resort</p>
 	</center>
 	</div>
 
@@ -659,7 +670,6 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 	<div data-role="footer">
 			<div data-role="navbar">
 					<ul>
-					<li><a href="#wrmap">Map</a></li>
 					<li><a href="#smgal">Gallery</a></li>
 					</ul>
 			</div>
@@ -670,10 +680,10 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 <div data-role="page" id="smgal" class="gallery-page">
 
 	<div data-role="header" style="min-height: 70px;">
-	<a href="#rock" data-icon="gear" class="ui-btn-right">Back</a>
+	<a href="#sm" data-icon="gear" class="ui-btn-right">Back</a>
 	<center>
 	<br>
-		<p style="font-size:30px ">Sun Marina Beach Resort</p>
+		<p style="font-size:18px ">Sun Marina Beach Resort</p>
 	</center>
 	</div>
 
@@ -719,7 +729,7 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 	<a href="#resto" data-icon="gear" class="ui-btn-right">Back</a>
 	<center>
 	<br>
-		<p style="font-size:25px">Hydra Restobar at the Pond</p>
+		<p style="font-size:18px">Hydra Restobar at the Pond</p>
 	</center>
 	</div>
 	
@@ -764,7 +774,7 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 	<a href="#hydra" data-icon="gear" class="ui-btn-right">Back</a>
 	<center>
 	<br>
-		<p style="font-size:30px ">Hydra Restobar</p>
+		<p style="font-size:25px ">Hydra Restobar</p>
 	</center>
 	</div>
 
@@ -828,8 +838,8 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 	<div data-role="footer">
 			<div data-role="navbar">
 					<ul>
-					<li><a href="map.html">Map</a></li>
-					<li><a href="#hydragal">Gallery</a></li>
+					<li><a href="../maps/jolibee.html" rel="external">Map</a></li>
+
 					</ul>
 			</div>
 	</div>
@@ -869,8 +879,8 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 	<div data-role="footer">
 			<div data-role="navbar">
 					<ul>
-					<li><a href="map.html">Map</a></li>
-					<li><a href="#hydragal">Gallery</a></li>
+					<li><a href="../maps/mi.html" rel="external">Map</a></li>
+
 					</ul>
 			</div>
 	</div>
@@ -913,8 +923,7 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 	<div data-role="footer">
 			<div data-role="navbar">
 					<ul>
-					<li><a href="map.html">Map</a></li>
-					<li><a href="#hydragal">Gallery</a></li>
+					<li><a href="maps/chowking.html" rel="external">Map</a></li>
 					</ul>
 			</div>
 	</div>
@@ -959,7 +968,6 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 	<div data-role="footer">
 			<div data-role="navbar">
 					<ul>
-					<li><a href="map.html">Map</a></li>
 					<li><a href="#sandgal">Gallery</a></li>
 					</ul>
 			</div>
@@ -1036,14 +1044,7 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 </div>
 
 
-<!--DIRECTORY MAP-->
 
-<!--WHITE ROCK-->
-<div data-role="page" id="wrmap">
-	<div data-role="header" style="min-height: 70px;">
-	<a href="#rock" data-icon="gear" class="ui-btn-right">Back</a>
-	</div>
-	</div>
 	
 	<!--SIDE PANEL-->
 
