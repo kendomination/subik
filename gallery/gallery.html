@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="css/blueimp-gallery.css">
+
+
+</head>
+<body>
+<!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+<script src="js/blueimp-gallery.min.js"></script>
+
+<div id="links">
+    <a href="images/subic/1.jpg"></a>
+    <a href="images/subic/2.jpg"></a>
+    <a href="images/subic/3.jpg"></a>
+    <a href="images/subic/4.jpg"></a>
+    <a href="images/subic/5.jpg"></a>
+    <a href="images/subic/6.jpg"></a>
+    <a href="images/subic/7.jpg"></a>
+    <a href="images/subic/8.jpg"></a>
+    <a href="images/subic/9.jpg"></a>
+    <a href="images/subic/10.jpg"></a>
+    <a href="images/subic/11.jpg"></a>
+    <a href="images/subic/12.jpg"></a>
+    <a href="images/subic/13.jpg"></a>
+    <a href="images/subic/14.jpg"></a>
+    <a href="images/subic/15.jpg"></a>
+    <a href="images/subic/16.jpg"></a>
+    <a href="images/subic/17.jpg"></a>
+    <a href="images/subic/18.jpg"></a>
+    <a href="images/subic/19.jpg"></a>
+    <a href="images/subic/20.jpg"></a>
+    <a href="images/subic/21.jpg"></a>
+    <a href="images/subic/22.jpg"></a>
+    <a href="images/subic/23.jpg"></a>
+
+</div>
+<script>
+document.getElementById('links').onclick = function (event) {
+    event = event || window.event;
+    var target = event.target || event.srcElement,
+        link = target.src ? target.parentNode : target,
+        options = {index: link, event: event},
+        links = this.getElementsByTagName('a');
+    blueimp.Gallery(links, options);
+};
+</script>
+<!-- The Gallery as inline carousel, can be positioned anywhere on the page -->
+<div id="blueimp-gallery-carousel" class="blueimp-gallery blueimp-gallery-carousel">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+<script>
+blueimp.Gallery(
+    document.getElementById('links').getElementsByTagName('a'),
+    {
+        container: '#blueimp-gallery-carousel',
+        carousel: true
+    }
+);
+</script>
+</body>
+
+</html>
