@@ -2,66 +2,93 @@
 <html>
 <head>
 	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
-	
-	<link href="css/jquery.mobile-1.0rc2.min.css" type="text/css"  rel="stylesheet" />
-	<link href="css/jquery-mobile.css" type="text/css" rel="stylesheet" />
-		<link href="css/subic.min.css" type="text/css" rel="stylesheet" />
-	<link href="photoswipe.css" type="text/css" rel="stylesheet" />
-	<link rel="stylesheet" href="css/bootstrap.min.css" />
-	
-	<script type="text/javascript" src="js/klass.min.js"></script>
-	<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
-	<script type="text/javascript" src="js/jquery.mobile-1.0rc2.min.js"></script>
-	<script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
-	
-	<script type="text/javascript">
-		
-		/*
-		 * IMPORTANT!!!
-		 * REMEMBER TO ADD  rel="external"  to your anchor tags. 
-		 * If you don't this will mess with how jQuery Mobile works
-		 */
-		
-		(function(window, $, PhotoSwipe){
+	<link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css" />
+<link rel="stylesheet" href="css/subic.css" />
+<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css" />
+<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="source/swipebox.css">
+<script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.3.2.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="lib/jquery-2.0.3.min.js"></script>
+<script src="source/jquery.swipebox.js"></script>
+
+<script>
+	jQuery(function($) {
+		$("#old").click(function(e){
+				e.preventDefault();
+				$.swipebox([
+					{ href : 'images/old subic/1.jpg', title : 'Throwback Subic' },
+					{ href : 'images/old subic/2.jpg', title : 'Throwback Subic' },
+					{ href : 'images/old subic/3.jpg', title : 'Throwback Subic' },
+					{ href : 'images/old subic/4.jpg', title : 'Throwback Subic' },
+					{ href : 'images/old subic/5.jpg', title : 'Throwback Subic' },
+					{ href : 'images/old subic/6.jpg', title : 'Throwback Subic' },
+					{ href : 'images/old subic/7.jpg', title : 'Throwback Subic' },
+					{ href : 'images/old subic/8.jpg', title : 'Throwback Subic' },
+					{ href : 'images/old subic/9.jpg', title : 'Throwback Subic' }
 			
-			$(document).ready(function(){
-				
-				$('div.gallery-page')
-					.live('pageshow', function(e){
-						
-						var 
-							currentPage = $(e.target),
-							options = {},
-							photoSwipeInstance = $("ul.gallery a", e.target).photoSwipe(options,  currentPage.attr('id'));
-							
-						return true;
-						
-					})
-					
-					.live('pagehide', function(e){
-						
-						var 
-							currentPage = $(e.target),
-							photoSwipeInstance = PhotoSwipe.getInstance(currentPage.attr('id'));
-
-						if (typeof photoSwipeInstance != "undefined" && photoSwipeInstance != null) {
-						photoSwipe.unsetActivateInstance(photoSwipeInstance);
-						}
-						
-						return true;
-						
-					});
-				
+				]);
 			});
-		
-		}(window, window.jQuery, window.Code.PhotoSwipe));
-		
-	</script>
-	
-</head>
-<body>
+			$("#town").click(function(e){
+				e.preventDefault();
+				$.swipebox([
+					{ href : 'images/town/1.jpg', title : 'Around the Town' },
+					{ href : 'images/town/2.jpg', title : 'Around the Town' },
+					{ href : 'images/town/3.jpg', title : 'Around the Town' },
+					{ href : 'images/town/4.jpg', title : 'Around the Town' },
+					{ href : 'images/town/5.jpg', title : 'Around the Town' },
+					{ href : 'images/town/6.jpg', title : 'Around the Town' },
+					{ href : 'images/town/7.jpg', title : 'Around the Town' },
+					{ href : 'images/town/8.jpg', title : 'Around the Town' },
+					{ href : 'images/town/9.jpg', title : 'Around the Town' },
+					{ href : 'images/town/10.jpg', title : 'Around the Town' },
+					{ href : 'images/town/11.jpg', title : 'Around the Town' },
+					{ href : 'images/town/12.jpg', title : 'Around the Town' },
+					{ href : 'images/town/13.jpg', title : 'Around the Town' }
+			
+			
+				]);
+			});
+				$("#where").click(function(e){
+				e.preventDefault();
+				$.swipebox([
+					{ href : 'images/subic/1.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/2.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/3.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/4.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/5.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/6.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/7.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/8.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/9.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/10.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/11.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/12.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/13.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/14.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/15.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/16.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/17.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/18.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/19.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/20.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/21.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/22.jpg', title : 'Where Mountains Meet the Sea' },
+					{ href : 'images/subic/23.jpg', title : 'Where Mountains Meet the Sea' },
+			
+			
+				]);
+			});
 
-<div data-role="page" id="Home">
+});
+</script>
+
+	
+<body>
+<div data-role="page" id="home"   style="background: #ffffff
+    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
 
 	<div data-role="header" style="min-height: 80px;">
 	<a href="index.html" rel="external" data-icon="gear" class="ui-btn-left">Back</a>
@@ -71,134 +98,18 @@
 	</center>
 	</div>
 	
-	
 	<div data-role="content" >	
 		
-
-		
 		<ul data-role="listview" data-inset="true">
-			<li><a href="gallery/gallery.html"  rel="external" style=" font-size:20px;">Around the Town</a></li> 
-			<li><a href="#mountsea"  style=" font-size:20px;">Where Mountains Meet the Sea</a></li> 
-			<li><a href="#old"  style=" font-size:20px;">Throwback Subic</a></li> 
+			<li><a href="#" id="town" style=" font-size:20px;">Around the Town</a></li> 
+			<li><a href="#" id="where"  style=" font-size:20px;">Where Mountains Meet the Sea</a></li> 
+			<li><a href="#"  id ="old"style=" font-size:20px;">Throwback Subic</a></li> 
 		</ul> 
-		
-	
-		
-		
 	
 		
 	</div>
 
-
 </div>
-
-<!--Around the Town-->
-
-<div data-role="page" id="town" class="gallery-page">
-
-	<div data-role="header" style="min-height: 80px;">
-	<a href="#Home" data-icon="gear" class="ui-btn-left">Back</a>
-	<center>
-	<br>
-		<p style="font-size:20px ">Around the Town</p>
-	</center>
-	</div>
-
-	<div data-role="content">	
-		<ul class="gallery">
-			<li><a href="images/town/1.jpg" rel="external"><img src="images/town/thumbs/1.jpg" alt="Around the Town" /></a></li>
-			<li><a href="images/town/2.jpg" rel="external"><img src="images/town/thumbs/2.jpg" alt="Around the Town" /></a></li>
-			<li><a href="images/town/3.jpg" rel="external"><img src="images/town/thumbs/3.jpg" alt="Around the Town" /></a></li>
-			<li><a href="images/town/4.jpg" rel="external"><img src="images/town/thumbs/4.jpg" alt="Around the Town" /></a></li>
-			<li><a href="images/town/5.jpg" rel="external"><img src="images/town/thumbs/5.jpg" alt="Around the Town" /></a></li>
-			<li><a href="images/town/6.jpg" rel="external"><img src="images/town/thumbs/6.jpg" alt="Around the Town" /></a></li>
-			<li><a href="images/town/7.jpg" rel="external"><img src="images/town/thumbs/7.jpg" alt="Around the Town" /></a></li>
-			<li><a href="images/town/8.jpg" rel="external"><img src="images/town/thumbs/8.jpg" alt="Around the Town" /></a></li>
-			<li><a href="images/town/9.jpg" rel="external"><img src="images/town/thumbs/9.jpg" alt="Around the Town" /></a></li>
-			<li><a href="images/town/10.jpg" rel="external"><img src="images/town/thumbs/10.jpg" alt="Around the Town" /></a></li>
-			<li><a href="images/town/11.jpg" rel="external"><img src="images/town/thumbs/11.jpg" alt="Around the Town" /></a></li>
-			<li><a href="images/town/12.jpg" rel="external"><img src="images/town/thumbs/12.jpg" alt="Around the Town" /></a></li>
-			<li><a href="images/town/13.jpg" rel="external"><img src="images/town/thumbs/13.jpg" alt="Around the Town" /></a></li>
-		</ul>
-	</div>
-
-</div>
-
-<!--Where Mountains Meet the Sea-->
-
-<div data-role="page" id="mountsea" class="gallery-page">
-
-	<div data-role="header" style="min-height: 80px;">
-	<a href="#Home" data-icon="gear" class="ui-btn-left">Back</a>
-	<center>
-	<br>
-	<br>
-		<p style="font-size:18x ">Where Mountains Meet the Sea</p>
-	</center>
-	</div>
-
-	<div data-role="content">	
-		<ul class="gallery">
-			<li><a href="images/subic/1.jpg" rel="external"><img src="images/subic/thumbs/1.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/2.jpg" rel="external"><img src="images/subic/thumbs/2.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/3.jpg" rel="external"><img src="images/subic/thumbs/3.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/4.jpg" rel="external"><img src="images/subic/thumbs/4.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/5.jpg" rel="external"><img src="images/subic/thumbs/5.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/6.jpg" rel="external"><img src="images/subic/thumbs/6.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/7.jpg" rel="external"><img src="images/subic/thumbs/7.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/8.jpg" rel="external"><img src="images/subic/thumbs/8.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/9.jpg" rel="external"><img src="images/subic/thumbs/9.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/10.jpg" rel="external"><img src="images/subic/thumbs/10.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/11.jpg" rel="external"><img src="images/subic/thumbs/11.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/12.jpg" rel="external"><img src="images/subic/thumbs/12.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/13.jpg" rel="external"><img src="images/subic/thumbs/13.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/14.jpg" rel="external"><img src="images/subic/thumbs/14.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/15.jpg" rel="external"><img src="images/subic/thumbs/15.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/16.jpg" rel="external"><img src="images/subic/thumbs/16.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/17.jpg" rel="external"><img src="images/subic/thumbs/17.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/18.jpg" rel="external"><img src="images/subic/thumbs/18.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/19.jpg" rel="external"><img src="images/subic/thumbs/19.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/20.jpg" rel="external"><img src="images/subic/thumbs/20.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/21.jpg" rel="external"><img src="images/subic/thumbs/21.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/22.jpg" rel="external"><img src="images/subic/thumbs/22.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/23.jpg" rel="external"><img src="images/subic/thumbs/23.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/24.jpg" rel="external"><img src="images/subic/thumbs/24.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/25.jpg" rel="external"><img src="images/subic/thumbs/25.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-			<li><a href="images/subic/26.jpg" rel="external"><img src="images/subic/thumbs/26.jpg" alt="Where Mountains Meet the Sea" /></a></li>
-		</ul>
-	</div>
-
-</div>
-
-<!--Throwback Subic-->
-
-<div data-role="page" id="old" class="gallery-page">
-
-	<div data-role="header" style="min-height: 80px;">
-	<a href="#Home" data-icon="gear" class="ui-btn-left">Back</a>
-	<center>
-	<br>
-		<p style="font-size:25px ">Throwback Subic</p>
-	</center>
-	</div>
-
-	<div data-role="content">	
-		<ul class="gallery">
-			<li><a href="images/old subic/1.jpg" rel="external"><img src="images/old subic/thumbs/1.jpg" alt="Throwback Subic" /></a></li>
-			<li><a href="images/old subic/2.jpg" rel="external"><img src="images/old subic/thumbs/2.jpg" alt="Throwback Subic" /></a></li>
-			<li><a href="images/old subic/3.jpg" rel="external"><img src="images/old subic/thumbs/3.jpg" alt="Throwback Subic" /></a></li>
-			<li><a href="images/old subic/4.jpg" rel="external"><img src="images/old subic/thumbs/4.jpg" alt="Throwback Subic" /></a></li>
-			<li><a href="images/old subic/5.jpg" rel="external"><img src="images/old subic/thumbs/5.jpg" alt="Throwback Subic" /></a></li>
-			<li><a href="images/old subic/6.jpg" rel="external"><img src="images/old subic/thumbs/6.jpg" alt="Throwback Subic" /></a></li>
-			<li><a href="images/old subic/7.jpg" rel="external"><img src="images/old subic/thumbs/7.jpg" alt="Throwback Subic" /></a></li>
-			<li><a href="images/old subic/8.jpg" rel="external"><img src="images/old subic/thumbs/8.jpg" alt="Throwback Subic" /></a></li>
-			<li><a href="images/old subic/9.jpg" rel="external"><img src="images/old subic/thumbs/9.jpg" alt="Throwback Subic" /></a></li>
-		</ul>
-	</div>
-
-</div>
-
-</div>
-
 </body>
+
 </html>

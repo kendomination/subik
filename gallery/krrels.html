@@ -2,7 +2,31 @@
 <html>
 <head>
 	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
-<link rel="stylesheet" href="css/blueimp-gallery.css">
+<link rel="stylesheet" href="../css/jquery.mobile-1.3.2.min.css" />
+<link rel="stylesheet" href="../css/subic.css" />
+<link rel="stylesheet" href="../css/jquery.mobile.structure-1.3.2.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="js/jquery.slides.js"></script>
+
+<script>
+    $(function() {
+      $('#slides').slidesjs({
+        width: 600,
+        height: 400,
+        play: {
+          active: true,
+          auto: true,
+          interval: 5000,
+          swap: true,
+          pauseOnHover: true,
+          restartDelay: 4000
+        }
+      });
+    });
+  </script>
  <style>
  .nav-search .ui-btn-up-a {
 					background-image:none;
@@ -20,86 +44,42 @@ body .ui-body-b, body .ui-overlay-b { text-shadow:0 0 0; }
     url('../images/bg.png');  background-attachment:fixed;"  data-theme="b">
 	<div data-role="header"  style="min-height: 70px;">
 	
-	<a href="../index.html#resorts" rel="external" data-icon="gear" class="ui-btn-right">Back</a>
+	<a href="../index.html#resorts" data-ajax="false" data-icon="gear" class="ui-btn-right">Back</a>
 	<center>
 	<br>
 		<p style="font-size:18px">Krrels Family Resort</p>
 	</center>
 	</div>
 
-<script src="js/blueimp-gallery.min.js"></script>
-
-<div id="links">
-    <a href="images/krrels/logo.jpg"></a>
-    <a href="images/krrels/1.jpg"></a>
-    <a href="images/krrels/2.jpg"></a>
-    <a href="images/krrels/3.jpg"></a>
-    <a href="images/krrels/4.jpg"></a>
-    <a href="images/krrels/5.jpg"></a>
-    <a href="images/krrels/6.jpg"></a>
-    <a href="images/krrels/7.jpg"></a>
-    <a href="images/krrels/8.jpg"></a>
-    <a href="images/krrels/9.jpg"></a>
-    <a href="images/krrels/10.jpg"></a>
-    <a href="images/krrels/11.jpg"></a>
-    <a href="images/krrels/12.jpg"></a>
-    <a href="images/krrels/13.jpg"></a>
-    <a href="images/krrels/14.jpg"></a>
-    <a href="images/krrels/15.jpg"></a>
-    <a href="images/krrels/16.jpg"></a>
-    <a href="images/krrels/17.jpg"></a>
-    <a href="images/krrels/18.jpg"></a>
-    <a href="images/krrels/19.jpg"></a>
-    <a href="images/krrels/20.jpg"></a>
-    <a href="images/krrels/21.jpg"></a>
-    
-
-</div>
-<script>
-document.getElementById('links').onclick = function (event) {
-    event = event || window.event;
-    var target = event.target || event.srcElement,
-        link = target.src ? target.parentNode : target,
-        options = {index: link, event: event},
-        links = this.getElementsByTagName('a');
-    blueimp.Gallery(links, options);
-};
-</script>
-<!-- The Gallery as inline carousel, can be positioned anywhere on the page -->
-<div id="blueimp-gallery-carousel" class="blueimp-gallery blueimp-gallery-carousel">
-    <div class="slides"></div>
-    <h3 class="title"></h3>
-
-    <a class="play-pause"></a>
-    <ol class="indicator"></ol>
-</div>
-<script>
-blueimp.Gallery(
-    document.getElementById('links').getElementsByTagName('a'),
-    {
-        container: '#blueimp-gallery-carousel',
-        carousel: true
-    }
-);
-</script>
-
-<link href="../css/jquery.mobile-1.0rc2.min.css" type="text/css"  rel="stylesheet" />
-<link rel="stylesheet" href="../css/subic.min.css" />
-
-<link rel="stylesheet" href="../css/jquery.mobile-1.3.2.min.css" />
-<link rel="stylesheet" href="../css/subic.css" />
-<link rel="stylesheet" href="../css/jquery.mobile.structure-1.3.2.min.css" />
-<link rel="stylesheet" href="../css/bootstrap-responsive.min.css" />
-<link rel="stylesheet" href="../css/bootstrap.min.css" />
-<link href="../css/jquery-mobile.css" type="text/css" rel="stylesheet" />
-<script type="text/javascript" src="../js/jquery.min.js"></script>
-<script type="text/javascript" src="../js/jquery.mobile.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 
 
-	
-	<div data-role="content">
-
+<div data-role="content">
+ <div class="container">
+    <div id="slides">
+      <img src="images/krrels/logo.jpg" >
+      <img src="images/krrels/1.jpg" >
+      <img src="images/krrels/2.jpg" >
+      <img src="images/krrels/3.jpg" >
+      <img src="images/krrels/4.jpg" >
+      <img src="images/krrels/5.jpg" >
+      <img src="images/krrels/6.jpg" >
+      <img src="images/krrels/7.jpg" >
+      <img src="images/krrels/8.jpg" >
+      <img src="images/krrels/9.jpg" >
+      <img src="images/krrels/10.jpg" >
+      <img src="images/krrels/11.jpg" >
+      <img src="images/krrels/12.jpg" >
+      <img src="images/krrels/13.jpg" >
+      <img src="images/krrels/14.jpg" >
+      <img src="images/krrels/15.jpg" >
+      <img src="images/krrels/16.jpg" >
+      <img src="images/krrels/17.jpg" >
+      <img src="images/krrels/18.jpg" >
+      <img src="images/krrels/19.jpg" >
+      <img src="images/krrels/20.jpg" >
+      <img src="images/krrels/21.jpg" >
+    	</div>
+	</div>
 	<br>
 	<br>
 	<p style="font-size:13px; font-weight:700; color:#000000" >Location: Purok 4, Sitio Ibayo, San Isidro, Subic, Zambales 2209</p>
@@ -123,8 +103,6 @@ blueimp.Gallery(
 		
 	</div>
 
-	<br>
-
 	
 	<div data-role="footer">
 	
@@ -135,6 +113,9 @@ blueimp.Gallery(
 			</div>
 	</div>
 	</div>
+
+
+
 
 </body>
 

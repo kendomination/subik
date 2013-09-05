@@ -3,67 +3,22 @@
 <head>
 	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
 
-<link href="css/jquery.mobile-1.0rc2.min.css" type="text/css"  rel="stylesheet" />
-<link rel="stylesheet" href="css/subic.min.css" />
-<link href="css/jquery-mobile.css" type="text/css" rel="stylesheet" />
+
 <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css" />
 <link rel="stylesheet" href="css/subic.css" />
 <link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css" />
 <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
 <link rel="stylesheet" href="css/bootstrap.min.css" />
-<link href="photoswipe.css" type="text/css" rel="stylesheet" />
-<link href="css/jquery-mobile.css" type="text/css" rel="stylesheet" />
 
-<script type="text/javascript" src="js/jquery.mobile-1.0rc2.min.js"></script>
-<script type="text/javascript" src="js/klass.min.js"></script>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.mobile.min.js"></script>
+
+<script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.3.2.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
-
- <script>
-		
-		/*
-		 * IMPORTANT!!!
-		 * REMEMBER TO ADD  rel="external"  to your anchor tags. 
-		 * If you don't this will mess with how jQuery Mobile works
-		 */
-		
-		(function(window, $, PhotoSwipe){
-			
-			$(document).ready(function(){
-				
-				$('div.gallery-page')
-					.live('pageshow', function(e){
-						
-						var 
-							currentPage = $(e.target),
-							options = {},
-							photoSwipeInstance = $("ul.gallery a", e.target).photoSwipe(options,  currentPage.attr('id'));
-							
-						return true;
-						
-					})
-					
-					.live('pagehide', function(e){
-						
-						var 
-							currentPage = $(e.target),
-							photoSwipeInstance = PhotoSwipe.getInstance(currentPage.attr('id'));
-
-						if (typeof photoSwipeInstance != "undefined" && photoSwipeInstance != null)  {
-							photoSwipe.unsetActivateInstance(photoSwipeInstance);
-						}
-						
-						return true;
-						
-					});
-				
-			});
-		
-		}(window, window.jQuery, window.Code.PhotoSwipe));
-		
- </script>
+<script>
+$.mobile.defaultPageTransition   = 'none'
+$.mobile.defaultDialogTransition = 'none'
+$.mobile.buttonMarkup.hoverDelay = 0
+</script>
  
  <style>
  .nav-search .ui-btn-up-a {
@@ -380,9 +335,9 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 	
 	<div data-role="content">
 	<ul data-role="listview" data-inset="true">
-			<li><a href="gallery/whiterock.html"  rel="external" style=" font-size:13px;">White Rock Beach Resort and Waterpark</a></li> 
-			<li><a href="gallery/krrels.html"  rel="external"  style=" font-size:13px;">Krrels Family Resort</a></li> 
-			<li><a href="gallery/sm.html"  rel="external"  style=" font-size:13px;">Sun Marina Beach Resort</a></li> 
+			<li><a href="gallery/whiterock.html"  data-ajax="false" style=" font-size:13px;">White Rock Beach Resort and Waterpark</a></li> 
+			<li><a href="gallery/krrels.html"  data-ajax="false"  style=" font-size:13px;">Krrels Family Resort</a></li> 
+			<li><a href="gallery/sm.html"  data-ajax="false" style=" font-size:13px;">Sun Marina Beach Resort</a></li> 
 			<li><a href="#Gallery1"  style=" font-size:13px;">Club Morrocco Resort</a></li> 
 			<li><a href="#Gallery1"  style=" font-size:13px;">Aplaya Del Subic</a></li> 
 			<li><a href="#Gallery1"  style=" font-size:13px;">Apo Gulf Resort</a></li> 
@@ -430,8 +385,8 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 	
 	<div data-role="content">
 	<ul data-role="listview" data-inset="true">
-			<li><a href="#Gallery1"  style=" font-size:13px;">Saint James Parish Church</a></li> 
-			<li><a href="#Gallery1"  style=" font-size:13px;">Garden of Prayer</a></li>
+			<li><a href="gallery/grotto.html"  style=" font-size:13px;">Saint James Parish Church</a></li> 
+			<li><a href="gallery/grotto.html"  data-ajax="false" style=" font-size:13px;">Garden of Prayer</a></li>
 		</ul> 
 	</div>
 </div>
@@ -440,46 +395,6 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 <!--OTHERS-->
 
 <!--GARDEN OF PRAYER-->
-<div data-role="page" id="grotto" style="background: #ffffff
-    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
-	<div data-role="header"  style="min-height: 70px;">
-	
-	<a href="#others" data-icon="gear" class="ui-btn-right">Back</a>
-	<center>
-	<br>
-		<p style="font-size:25px">Garden of Prayer</p>
-	</center>
-	</div>
-	
-	<div data-role="content">
-	<center>
-	<img src="images/hydra/1.jpg "/>
-	</center>
-	<br>
-	<br>
-	<p style="font-size:13px; font-weight:700; color:#000000" >Location: National Highway, Aningway, Subic, Zambales 2209<p>
-				<p style="font-size:13px; font-weight:700; color:#000000" >Contact Information:<p>
-	<p style="font-size:13px; font-weight:700; color:#000000" >Telephone: (047) 232-3273<p>
-	
-			<table>
-		<thead>
-			<tr>
-
-			</tr>
-			</table>
-	</div>
-	
-	<div data-role="footer">
-			<div data-role="navbar">
-					<ul>
-					<li><a href="map.html">Map</a></li>
-					<li><a href="#hydragal">Gallery</a></li>
-					</ul>
-			</div>
-	</div>
-</div>
-
-
 
 	
 	<!--SIDE PANEL-->

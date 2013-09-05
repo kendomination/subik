@@ -2,7 +2,31 @@
 <html>
 <head>
 	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
-<link rel="stylesheet" href="css/blueimp-gallery.css">
+<link rel="stylesheet" href="../css/jquery.mobile-1.3.2.min.css" />
+<link rel="stylesheet" href="../css/subic.css" />
+<link rel="stylesheet" href="../css/jquery.mobile.structure-1.3.2.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="js/jquery.slides.js"></script>
+
+<script>
+    $(function() {
+      $('#slides').slidesjs({
+        width: 600,
+        height: 400,
+        play: {
+          active: true,
+          auto: true,
+          interval: 5000,
+          swap: true,
+          pauseOnHover: true,
+          restartDelay: 4000
+        }
+      });
+    });
+  </script>
  <style>
  .nav-search .ui-btn-up-a {
 					background-image:none;
@@ -16,105 +40,71 @@ body .ui-body-b, body .ui-overlay-b { text-shadow:0 0 0; }
  </style>
 </head>
 <body>
-<div data-role="page" id="hydra" style="background: #ffffff
+ <div data-role="page" id="hydra" style="background: #ffffff
     url('../images/bg.png');  background-attachment:fixed;"  data-theme="b">
 	<div data-role="header"  style="min-height: 70px;">
 	
-	<a href="#resto" data-icon="gear" class="ui-btn-right">Back</a>
+	<a href="#dir" data-icon="gear" class="ui-btn-right">Back</a>
 	<center>
 	<br>
-		<p style="font-size:18px">Hydra Restobar at the Pond</p>
+		<p style="font-size:25px">Hydra Restobar at the Pond</p>
 	</center>
 	</div>
-<script src="js/blueimp-gallery.min.js"></script>
-
-<div id="links">
-    <a href="images/hydra/1.jpg"></a>
-    <a href="images/hydra/2.jpg"></a>
-    <a href="images/hydra/3.jpg"></a>
-    <a href="images/hydra/4.jpg"></a>
-    <a href="images/hydra/5.jpg"></a>
-    <a href="images/hydra/6.jpg"></a>
-    <a href="images/hydra/7.jpg"></a>
-    <a href="images/hydra/8.jpg"></a>
-    <a href="images/hydra/9.jpg"></a>
-    <a href="images/hydra/10.jpg"></a>
-    <a href="images/hydra/11.jpg"></a>
-    <a href="images/hydra/12.jpg"></a>
-    <a href="images/hydra/13.jpg"></a>
-    <a href="images/hydra/14.jpg"></a>
-    <a href="images/hydra/15.jpg"></a>
-    <a href="images/hydra/16.jpg"></a>
-    <a href="images/hydra/17.jpg"></a>
-
-
-</div>
-<script>
-document.getElementById('links').onclick = function (event) {
-    event = event || window.event;
-    var target = event.target || event.srcElement,
-        link = target.src ? target.parentNode : target,
-        options = {index: link, event: event},
-        links = this.getElementsByTagName('a');
-    blueimp.Gallery(links, options);
-};
-</script>
-<!-- The Gallery as inline carousel, can be positioned anywhere on the page -->
-<div id="blueimp-gallery-carousel" class="blueimp-gallery blueimp-gallery-carousel">
-    <div class="slides"></div>
-    <h3 class="title"></h3>
-
-    <a class="play-pause"></a>
-    <ol class="indicator"></ol>
-</div>
-<script>
-blueimp.Gallery(
-    document.getElementById('links').getElementsByTagName('a'),
-    {
-        container: '#blueimp-gallery-carousel',
-        carousel: true
-    }
-);
-</script>
-
-<link href="../css/jquery.mobile-1.0rc2.min.css" type="text/css"  rel="stylesheet" />
-<link rel="stylesheet" href="../css/subic.min.css" />
-
-<link rel="stylesheet" href="../css/jquery.mobile-1.3.2.min.css" />
-<link rel="stylesheet" href="../css/subic.css" />
-<link rel="stylesheet" href="../css/jquery.mobile.structure-1.3.2.min.css" />
-<link rel="stylesheet" href="../css/bootstrap-responsive.min.css" />
-<link rel="stylesheet" href="../css/bootstrap.min.css" />
-<link href="../css/jquery-mobile.css" type="text/css" rel="stylesheet" />
-<script type="text/javascript" src="../js/jquery.min.js"></script>
-<script type="text/javascript" src="../js/jquery.mobile.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-
-
 	
-<div data-role="content">
 
+
+<div data-role="content">
+<center>
+	<p style="font-size:13px; font-weight:700; color:#000000" >You can swipe the images<p>
+</center>
+ <div class="container">
+    <div id="slides">
+      <img src="images/hydra/1.jpg" >
+      <img src="images/hydra/2.jpg" >
+      <img src="images/hydra/3.jpg" >
+      <img src="images/hydra/4.jpg" >
+      <img src="images/hydra/5.jpg" >
+      <img src="images/hydra/6.jpg" >
+      <img src="images/hydra/7.jpg" >
+      <img src="images/hydra/8.jpg" >
+      <img src="images/hydra/9.jpg" >
+      <img src="images/hydra/10.jpg" >
+      <img src="images/hydra/11.jpg" >
+      <img src="images/hydra/12.jpg" >
+      <img src="images/hydra/13.jpg" >
+      <img src="images/hydra/14.jpg" >
+      <img src="images/hydra/15.jpg" >
+      <img src="images/hydra/16.jpg" >
+      <img src="images/hydra/17.jpg" >
+
+    	</div>
+	</div>
 	<br>
-	<br>
-	<p style="font-size:13px; font-weight:700; color:#000000" >Location: Purok 1, Mangan-Vaca, Subic, Zambales 2209</p>
-	<p style="font-size:13px; font-weight:700; color:#000000" >Operating Hours: 6:00 pm-3:00 am Everyday</p>
-	 	<p style="font-size:13px; font-weight:700; color:#000000">Contact Information:</p>
-			<p style="font-size:13px; font-weight:700; color:#000000">Phone: 09193954553 </p>
-			<p style="font-size:13px; font-weight:700; color:#000000">Email: christnedeperio@rocketmail.com </p>
-			<p style="font-size:13px; font-weight:700; color:#000000">Facebook: www.facebook.com/pages/Hydra-RestoBar-at-The-Pond/356309007771811</p><br>
+
+	<p style="font-size:13px; font-weight:700; color:#000000" >Location: Purok 1, Mangan-Vaca, Subic, Zambales 2209<p>
+	<p style="font-size:13px; font-weight:700; color:#000000" >Operating Hours: 6:00 pm-3:00 am Everyday<p>
+	 	<p style="font-size:13px; font-weight:700; color:#000000">Contact Information:<p>
+			<p style="font-size:13px; font-weight:700; color:#000000">Phone: 09193954553 <p>
+			<p style="font-size:13px; font-weight:700; color:#000000">Email: christnedeperio@rocketmail.com <p><br>
 			
 			<table>
 		<thead>
 			<tr>
-				<th><a href="tel:09193954553"><img src="../images/buttons/col.png"/></a></th>
-				<th><a href="sms:09193954553"><img src="../images/buttons/sms.png"/></th>
-				<th><a href="mailto:christnedeperio@rocketmail.com"><img src="../images/buttons/email.png"/></th>
-				<th><a href="https://www.facebook.com/pages/Hydra-RestoBar-at-The-Pond/356309007771811" target="_blank"><img src="../images/buttons/fb.png"/></th>
+				<th><a href="tel:09193954553"><img src="../images/buttons/col.png" style="width:100%; height:auto"/></a></th>
+				<th><a href="sms:09193954553"><img src="../images/buttons/sms.png"style="width:100%; height:auto"/></th>
+				<th><a href="mailto:christnedeperio@rocketmail.com"><img src="../images/buttons/email.png" style="width:100%; height:auto"/></th>
 			</tr>
 			</table>
+		
 	</div>
+
+	<br>
+
 	
-</div>
+
+	</div>
+
+
 
 
 </body>
