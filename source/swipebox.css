@@ -116,7 +116,7 @@ html.swipebox {
   top: 0!important;
 }
 
-#swipebox-action #swipebox-prev, #swipebox-action #swipebox-next,
+
 #swipebox-action #swipebox-close {
   background-image: url("img/icons.png");
   background-repeat: no-repeat;
@@ -240,11 +240,11 @@ html.swipebox {
 #swipebox-action, #swipebox-caption {
   text-shadow: 1px 1px 1px black;
   background-color: #0d0d0d;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0d0d0d), color-stop(100%, #000000));
-  background-image: -webkit-linear-gradient(#0d0d0d, #000000);
-  background-image: -moz-linear-gradient(#0d0d0d, #000000);
-  background-image: -o-linear-gradient(#0d0d0d, #000000);
-  background-image: linear-gradient(#0d0d0d, #000000);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #FF6600), color-stop(100%, #009933 ));
+  background-image: -webkit-linear-gradient(#FF6600, #009933 );
+  background-image: -moz-linear-gradient(#FF6600, #009933 );
+  background-image: -o-linear-gradient(#FF6600, #009933 );
+  background-image: linear-gradient(#FF6600, #009933 );
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95);
   opacity: 0.95;
 }

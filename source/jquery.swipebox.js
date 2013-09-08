@@ -521,38 +521,8 @@
 				}	
 			},
 			
-			getNext : function (){
-				var $this = this;
-				index = $('#swipebox-slider .slide').index($('#swipebox-slider .slide.current'));
-				if(index+1 < elements.length){
-					index++;
-					$this.setSlide(index);
-					$this.preloadMedia(index+1);
-				}
-				else{
-					
-					$('#swipebox-slider').addClass('rightSpring');
-					setTimeout(function(){
-						$('#swipebox-slider').removeClass('rightSpring');
-					},500);
-				}
-			},
-			
-			getPrev : function (){
-				index = $('#swipebox-slider .slide').index($('#swipebox-slider .slide.current'));
-				if(index > 0){
-					index--;
-					this.setSlide(index);
-					this.preloadMedia(index-1);
-				}
-				else{
-					
-					$('#swipebox-slider').addClass('leftSpring');
-					setTimeout(function(){
-						$('#swipebox-slider').removeClass('leftSpring');
-					},500);
-				}
-			},
+		
+		
 
 
 			closeSlide : function (){
