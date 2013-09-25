@@ -29,7 +29,11 @@ jQuery(function($) {
 					{ href : 'images/town/10.jpg', title : 'Around the Town' },
 					{ href : 'images/town/11.jpg', title : 'Around the Town' },
 					{ href : 'images/town/12.jpg', title : 'Around the Town' },
-					{ href : 'images/town/13.jpg', title : 'Around the Town' }
+					{ href : 'images/town/13.jpg', title : 'Around the Town' },
+					{ href : 'images/town/14.jpg', title : 'Around the Town' },
+					{ href : 'images/town/15.jpg', title : 'Around the Town' },
+					{ href : 'images/town/16.jpg', title : 'Around the Town' },
+					{ href : 'images/town/17.jpg', title : 'Around the Town' }
 			
 			
 				]);
