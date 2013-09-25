@@ -21,9 +21,15 @@
 
 			<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		
+		
+		</script>
 		<script type="text/javascript">
 				
-  document.addEventListener("deviceready", onDeviceReady, false);
+ function onLoad(){
+ document.addEventListener("deviceready", onDeviceReady, true);
+ 
+ }
 			google.maps.visualRefresh = true;
 						var mobileDemo = { 'center': '14.854798,120.242979', 'zoom': 18};
 						
@@ -69,7 +75,7 @@
 		
 	
     </head>
-    <body>
+    <body onload="onLoad()">
 	
 		
 		<div id="directions_map" data-role="page" id="subic">
