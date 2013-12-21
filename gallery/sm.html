@@ -8,9 +8,36 @@
 <link rel="stylesheet" href="css/style.css" />
 
 <script type="text/javascript" src="../js/jquery.min.js"></script>
-<script type="text/javascript" src="../js/jquery.mobile.min.js"></script>
+<script src="../js/jquery.mobile-1.3.2.min.js"></script>
 <script type="text/javascript" src="js/jquery.slides.js"></script>
+   <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
 
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Global InAppBrowser reference
+    var iabRef = null;
+
+    function iabLoadStart(event) {
+        alert(event.type + ' - ' + event.url);
+    }
+
+    function iabLoadStop(event) {
+        alert(event.type + ' - ' + event.url);
+    }
+
+    function iabClose(event) {
+         alert(event.type);
+         iabRef.removeEventListener('loadstart', iabLoadStart);
+         iabRef.removeEventListener('loadstop', iabLoadStop);
+         iabRef.removeEventListener('exit', iabClose);
+    }
+
+  
+
+    </script>
 <script>
     $(function() {
       $('#slides').slidesjs({
@@ -28,7 +55,7 @@
     });
   </script>
    <style>
- .nav-search .ui-btn-up-a {
+.nav-search .ui-btn-up-a {
 					background-image:none;
 					background-color:#333333;
 				}
@@ -37,21 +64,39 @@
 					border-color: rgba(255, 255, 255, .1);
 				}
 body .ui-body-b, body .ui-overlay-b { text-shadow:0 0 0; }
+.ui-btn-text {
+    font-size: 25px; /* Play with font size of the text */
+}
+
+
  </style>
 </head>
 <body>
- <div data-role="page" id="sm" style="background: #ffffff
-    url('../images/bg.png');  background-attachment:fixed;"  data-theme="b">
+ <div data-role="page" id="sm" >
+  	<div data-role="panel" id="mypanel"   data-position="right" data-display="push" >
+				<ul data-role="listview" >
+					<li><a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://www.subictacular.com/places-to-go/resorts/sun-marina-beach-resort/ ','_blank','location=yes')">Share</a></li>
+					<li><a href="#" onclick="window.open('https://twitter.com/intent/tweet?button_hashtag=SubicTacular&text=http://www.subictacular.com/places-to-go/resorts/sun-marina-beach-resort/ ','_blank','location=yes')">Tweet</a></li>
+<li><a href="comments/marina.html" rel="external" >Comments</a></li>
+				</ul>
+</div><!-- /panel -->
+ 
 	<div data-role="header"  style="min-height: 70px;">
 	
-	<a href="../index.html#resorts" data-ajax="false" data-icon="gear" class="ui-btn-right">Back</a>
+	<a href="../index.html#resorts"rel="external" data-icon="back" class="ui-btn-left">Back</a>
 	<center>
 	<br>
-		<p style="font-size:18px">Sun Marina Beach Resort</p>
+		<p style="font-size:35px">Sun Marina Beach Resort</p>
+			<br>
 	</center>
+			<a href="#mypanel"   data-icon="bars" class="ui-btn-right">Menu</a>
 	</div>
 
-<div data-role="content">
+<div data-role="content" style="background: #ffffff
+    url('../images/bgod.jpg');  background-size:cover;" >
+<a href="#help" data-role="button" data-inline="true" data-rel="dialog" data-mini="true" data-transition="pop">Help</a>
+<br>
+<br>
  <div class="container">
     <div id="slides">
       <img src="images/sm/logo.jpg" >
@@ -82,14 +127,23 @@ body .ui-body-b, body .ui-overlay-b { text-shadow:0 0 0; }
 
 	<br>
 	<br>
-	<p style="font-size:13px; font-weight:700; color:#000000" >Location: Sitio Nagtulong, Cawag Subic, Zambales 2209</p>
-	 	<p style="font-size:13px; font-weight:700; color:#000000">Contact Information:</p>
-			<p style="font-size:13px; font-weight:700; color:#000000">Mobile: 0907-908-4592</p>
-			<p style="font-size:13px; font-weight:700; color:#000000">Website: www.sunmarinabeachresort.weebly.com</p>
-			<p style="font-size:13px; font-weight:700; color:#000000">Facebook: www.facebook.com/SunMarinaBeachAndResort</p><br>
-											<a href="https://www.facebook.com/sharer/sharer.php?u=http://subictacular.tk/directory/resorts/sun-marina/" target="_blank">
-<img src="images/share.png" style="max-width:100%; height:auto" />
-</a>
+
+	
+	<p style="font-size:20px; font-weight:700; color:#000000" >Features:<br>
+24 Hours <br>
+Cottages <br>
+Videoke Rental<br>
+Tent Rental <br>
+</p>	
+	
+	<p style="font-size:20px; font-weight:700; color:#000000" >Location: Sitio Nagtulong, Cawag Subic, Zambales 2209	<br>
+Contact Information:	<br>
+Mobile: 0907-908-4592	<br>
+Website: www.sunmarinabeachresort.weebly.com	<br>
+Facebook: www.facebook.com/SunMarinaBeachAndResort</p>
+	<br>
+	<br>
+			<center>
 			<table>
 		<thead>
 			<tr>
@@ -100,8 +154,29 @@ body .ui-body-b, body .ui-overlay-b { text-shadow:0 0 0; }
 			</tr>
 			</tr>
 			</table>
+			</center>
+<br>
+<br>
 	</div>
 
+	</div>
+<div data-role="dialog" id="help">
+	
+		<div data-role="header" data-theme="b">
+			<h1>Help</h1>
+		</div>
+
+		<div data-role="content">
+			<p style="font-size:20px; font-weight:700; color:#000000">You can swipe the images left and right to view the gallery</p>
+			<br>
+			<p style="font-size:20px; font-weight:700; color:#000000">Button Guide (some buttons might not be available on some establishments)</p>
+			<p style="font-size:20px; font-weight:700; color:#000000"><img src="../images/buttons/col.png"  style="width:50px; height:50px"/>Touch this button to call the establishment</p>
+			<p style="font-size:20px; font-weight:700; color:#000000"><img src="../images/buttons/sms.png"  style="width:50px; height:50px"/>Touch this button to text/sms the establishment</p>
+			<p style="font-size:20px; font-weight:700; color:#000000"><img src="../images/buttons/email.png"  style="width:50px; height:50px"/>Touch this button to email the establishment</p>
+			<p style="font-size:20px; font-weight:700; color:#000000"><img src="../images/buttons/web.png"  style="width:50px; height:50px"/>Touch this button access the website of the establishment</p>
+			<p style="font-size:20px; font-weight:700; color:#000000"><img src="../images/buttons/fb.png"  style="width:50px; height:50px"/>Touch this button access the facebook page of the establishment</p>
+
+		</div>
 	</div>
 
 </body>

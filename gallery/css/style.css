@@ -1,3 +1,15 @@
+@font-face {
+	font-family: 'Nevis';
+	src: url('../fonts/nevis.ttf');
+	src: url('../fonts/nevis.woff') format('woff'),
+    
+}
+
+p, h1, h2, h3, h4, a{
+		font-family:'Nevis';
+
+}
+
 
     #slides {
       display: none

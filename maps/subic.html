@@ -1,0 +1,62 @@
+<!doctype html>
+<html manifest="cache.manifest">
+   <head>
+		<title>Map of Subic</title>
+<meta name="viewport" id="viewport" content="initial-scale=1,user-scalable=no, maximum-scale=1">
+		<link rel="stylesheet" href="../css/subic.min.css" />
+<link rel="stylesheet" href="../css/jquery.mobile-1.3.2.min.css" />
+<link rel="stylesheet" href="../css/subic.css" />
+<link rel="stylesheet" href="../css/jquery.mobile.structure-1.3.2.min.css" />
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+		<script type="text/javascript" src="../js/jquery-1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-mobile-1.0/jquery.mobile.min.js"></script>
+		<script type="text/javascript" src="../js/demo.js"></script>
+		<script type="text/javascript" src="../ui/jquery.ui.map.js"></script>
+
+			<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<script type="text/javascript">
+				
+
+			google.maps.visualRefresh = true;
+			var mobileDemo = { 'center': '14.9000, 120.2333', 'zoom': 15};
+			
+	
+			$('#basic_map').live('pageinit', function() {
+				demo.add('basic_map', function() {
+					$('#map_canvas').gmap({'center': mobileDemo.center, 'zoom': mobileDemo.zoom, 'disableDefaultUI':true, 'callback': function() {
+						var self = this;
+	
+					}}); 
+				}).load('basic_map');
+			});
+			
+			$('#basic_map').live('pageshow', function() {
+				demo.add('basic_map', function() { $('#map_canvas').gmap('refresh'); }).load('basic_map');
+			});
+
+        </script>
+		
+		 <style>
+
+.ui-btn-text {
+    font-size: 25px; /* Play with font size of the text */
+}
+
+ </style>
+    </head>
+    <body>
+	
+		
+		<div id="basic_map" data-role="page" id="subic">
+			
+				</div>
+					<div id="map_canvas" style="position:absolute; width:100%; height:100%; " ></div>
+		
+
+
+			
+	
+		
+	</body>
+</html>

@@ -6,23 +6,21 @@
         version   = "1.0.0">
 
 
-    <name>SubicTacular! Beta</name>
+    <name>SubicTacular!</name>
 
     <description>
-Subic
+Subic Travel Guide
     </description>
 
     <author >
         Kenneth Canlas
     </author>
-
-
 <preference name="splash-screen-duration" value="4000" />
 <icon src="icons/ldpi.png" gap:platform="android" gap:density="ldpi" />
 <icon src="icons/mdpi.png" gap:platform="android" gap:density="mdpi" />
 <icon src="icons/hdpi.png" gap:platform="android" gap:density="hdpi" />
 <icon src="icons/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
-<plugin name="Notification" value="org.apache.cordova.Notification"/>	
+	
 	
 <gap:splash src="splash/ldpi.png" gap:platform="android" gap:density="ldpi" />
 <gap:splash src="splash/mdpi.png" gap:platform="android" gap:density="mdpi" />

@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
+<link rel="stylesheet" href="../css/jquery.mobile-1.3.2.min.css" />
+<link rel="stylesheet" href="../css/subic.css" />
+<link rel="stylesheet" href="../css/jquery.mobile.structure-1.3.2.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script src="../js/jquery.mobile-1.3.2.min.js"></script>
+
+<script type="text/javascript" src="js/jquery.slides.js"></script>
+   <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Global InAppBrowser reference
+    var iabRef = null;
+
+    function iabLoadStart(event) {
+        alert(event.type + ' - ' + event.url);
+    }
+
+    function iabLoadStop(event) {
+        alert(event.type + ' - ' + event.url);
+    }
+
+    function iabClose(event) {
+         alert(event.type);
+         iabRef.removeEventListener('loadstart', iabLoadStart);
+         iabRef.removeEventListener('loadstop', iabLoadStop);
+         iabRef.removeEventListener('exit', iabClose);
+    }
+
+
+
+    </script>
+<title>Festivals</title>
+<script>
+    $(function() {
+      $('#slides').slidesjs({
+        width: 600,
+        height: 400,
+        play: {
+          active: true,
+          auto: true,
+          interval: 5000,
+          swap: true,
+          pauseOnHover: true,
+          restartDelay: 4000
+        }
+      });
+    });
+	
+
+ 
+</script>
+ <style>
+ .nav-search .ui-btn-up-a {
+					background-image:none;
+					background-color:#333333;
+				}
+				.nav-search .ui-btn-inner {
+					border-top: 1px solid #888;
+					border-color: rgba(255, 255, 255, .1);
+				}
+body .ui-body-b, body .ui-overlay-b { text-shadow:0 0 0; }
+
+.ui-btn-text {
+    font-size: 25px; /* Play with font size of the text */
+}
+ </style>
+
+</head>
+<body>
+
+
+ <div data-role="page" id="subicay"  >
+
+	<div data-role="header"  style="min-height: 60px;" >
+	<a href="../index.html#fest" rel="external" data-icon="back" class="ui-btn-left">Back</a>
+	<center>
+	<br>
+	<br>
+		<p style="font-size:25px">Subic Ay! Festival</p>
+			<br>
+	</center>
+	</div>
+	
+	<div data-role="content" style="background: #ffffff
+    url('../images/bgod.jpg'); background-size:cover;" >
+
+    <div class="container">
+ <div id="slides">
+             <img src="images/fiesta/1.jpg" />
+             <img src="images/fiesta/2.jpg" />
+             <img src="images/fiesta/3.jpg" />
+             <img src="images/fiesta/4.jpg" />
+             <img src="images/fiesta/5.jpg" />
+             <img src="images/fiesta/6.jpg" />
+             <img src="images/fiesta/7.jpg" />
+             <img src="images/fiesta/8.jpg" />
+             <img src="images/fiesta/9.jpg" />
+             <img src="images/fiesta/10.jpg" />
+             <img src="images/fiesta/11.jpg" />
+             <img src="images/fiesta/12.jpg" />
+             <img src="images/fiesta/13.jpg" />
+             <img src="images/fiesta/14.jpg" />
+             <img src="images/fiesta/15.jpg" />
+             <img src="images/fiesta/16.jpg" />
+             <img src="images/fiesta/17.jpg" />
+             <img src="images/fiesta/18.jpg" />
+             <img src="images/fiesta/19.jpg" />
+             <img src="images/fiesta/20.jpg" />
+             <img src="images/fiesta/21.jpg" />
+     
+         </div>
+		 
+     </div>
+
+		<p style="font-size:20px; font-weight:700; color:#000000" >Date: April (This festival happens once every three years)</p><br>
+
+
+		<p style="font-size:20px; font-weight:700; color:#000000" >The festival was organized and spearheaded by the Municipal Government of Subic, Zambales in cooperation with the different non-government organizations of the town, and is being held in order to boost the tourism industry of the locality aside from instilling the spirit and pride of patriotism among the Subiquenos. The "word "AY! is the expression habitually and fondly used by the majority Tagalog speaking people of Subic, which makes the Subiqueno unique and distinct during conversations from other Tagalog speaking inhabitants of the region. 
+ </p><br>
+ 
+		<p style="font-size:20px; font-weight:700; color:#000000" >Events:<br>
+Street Dancing Contest<br>
+Drum and Lyre Competition<br>
+Subic Got Talent<br>
+Banca Race/Karakol Exhibit<br>
+Pasayaw ng Bayan<br>
+Binibining Subic<br>
+Subic Mardigras<br>
+Variety Show featuring local celebrities</p>
+				</div>
+	
+		</div>
+		
+
+	
+	
+	
+	
+	
+	
+
+</body>
+
+</html>

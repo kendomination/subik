@@ -1,21 +1,27 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
-
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
 
 <link rel="stylesheet" href="css/jquery.mobile-1.3.2.min.css" />
 <link rel="stylesheet" href="css/subic.css" />
 <link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css" />
 <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
 <link rel="stylesheet" href="css/bootstrap.min.css" />
-
+<link rel="stylesheet" href="style.css" />
 
 <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
 <script type="text/javascript" src="js/jquery.mobile-1.3.2.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/events.js"></script>
 
- 
+ <script>
+	$(document).bind('pageinit', function () {
+    $.mobile.defaultPageTransition = 'none';
+});
+
+
+</script>
  <style>
  .nav-search .ui-btn-up-a {
 					background-image:none;
@@ -26,35 +32,160 @@
 					border-color: rgba(255, 255, 255, .1);
 				}
 body .ui-body-b, body .ui-overlay-b { text-shadow:0 0 0; }
+
+.ui-btn-text {
+    font-size: 25px; /* Play with font size of the text */
+}
+
+td, th{
+font-size:30px
+
+}
  </style>
 <title>SubicTacular!</title>
 </head>
-<body>
+<body onload="showevent()">
 
 <!--Main Menu-->
 <div data-role="page" id="main"style="background: #ffffff
-    url('images/bg.png');  background-attachment:fixed;" data-theme="b" >
+    url('images/bgod.jpg');  background-size:cover;" data-theme="b" >
 	
-		<div data-role="content" align="center">
-	<img src="images/logo-beta.png"/>
+		<div data-role="content">
+		<a href="#about" data-role="button" data-inline="true" data-mini="true" >About</a>
+		<center>
+	<img src="images/logo5.png"/>
 	<br>
-		<a href="#dir"><img src="images/directory.png" /></a>
-		<a href="#info"><img src="images/info.png" /></a>
-		<a href="#lgu"><img src="images/lgu.png" /></a>
-		<a href="photo.html" rel="external"><img src="images/gallery.png" /></a>
-		<a href="#about"  data-role="button">About SubicTacular</a>
+		</center>
+			<table>
+		<thead>
+			<tr>
+				<th>	<a href="#dir"><img src="images/directory.png" /></a></th>
+				<th>	<a href="#info"><img src="images/info.png" /></a></th>	
+			</tr>
+			</table>
+			<br>
+					<table>			
+		<thead>		
+			<tr>	
+				<th>	<a href="#events"><img src="images/events.png" /></a></th>
+				<th>		<a href="#gallery"><img src="images/gallery.png" /></a></th>
+			</tr>
+			</table>
 		</div>
 </div>
 
-<!--LGU-->
-<div data-role="page" id="lgu" style="background: #ffffff
-    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
-	<div data-role="header">
-	<a href="#main" data-icon="back" class="ui-btn-right" data-iconpos="notext"></a>
+<!--Gallery-->
+<div data-role="page" id="gallery" style="background: #ffffff
+    url('images/bgod.jpg');  background-size:cover;" data-theme="b" >
+	<div data-role="header" style="min-height: 50px;">
+	<a href="#main" data-icon="back" class="ui-btn-left" >Back</a>
 	<center>
 	<br>
-		<p style="font-size:35px">LGU Directory</p>
-		<br>
+	<br>
+		<p style="font-size:30px">SubicTacular Gallery</p>
+			<br>
+			<br>
+	</center>
+	</div>
+		<div data-role="content">
+	<ul data-role="listview" data-inset="true">
+			<li><a href="photo.html"  rel="external" style=" font-size:20px;">Photo Gallery</a></li> 
+			<li><a href="photo.html#videos"  rel="external" style=" font-size:20px;">Video Gallery</a></li> 
+
+		</ul> 
+				
+
+</video>	
+		</div>
+</div>
+<!--Festivals-->
+<div data-role="page" id="fest" style="background: #ffffff
+    url('images/bgod.jpg');  background-size:cover;" data-theme="b" >
+	<div data-role="header"  style="min-height: 60px;" >
+	<a href="#info"  data-icon="back" class="ui-btn-left">Back</a>
+	<center>
+	<br>
+	<br>
+		<p style="font-size:25px">Subic Festivals</p>
+			<br>
+	</center>
+	</div>
+	<div data-role="content">
+		<ul data-role="listview" data-inset="true">
+			<li><a href="gallery/subicay.html" rel="external" style="font-size:20px;">Subic Ay Festival</a></li> 
+			<li><a href="gallery/mamalakaya.html"  rel="external" style=" font-size:20px;">Mamalakaya Festival</a></li> 
+	
+	</div>
+	</div>
+
+<!--History-->
+<div data-role="page" id="past" style="background: #ffffff
+    url('images/bg1.jpg');  background-size:cover;"  data-theme="b">
+	<div data-role="header" style="min-height: 50px;">
+	<a href="#info" data-icon="back" class="ui-btn-left" >Back</a>
+	<center>
+	<br>
+	<br>
+		<p style="font-size:30px">About Subic, Zambales</p>
+			<br>
+			<br>
+	</center>
+	</div>
+		<div data-role="content">
+		<h1>About Subic Town</h1>
+		<center>
+		<img src="images/seal.jpg">
+		
+		<p><i>Official Seal of Subic, Zambales</i></p>
+		</center>
+		<h4>Subic is a municipality in the province of Zambales, located along the northern coast of Subic Bay in the Philippines. According to the census of May 2010, it has a population of 89,724 and a 1st class Income classification. Its main industries are fishing, ship-building and repairing and tourism.</h4>
+				<center>
+		<img src="images/pop.jpg">
+		
+		<p><i>Population fo Subic (2010 Census)</i></p>
+		</center>
+				<center>
+		<img src="images/fish.jpg">
+		
+		<p><i>FIshing-the main industry in Subic</i></p>
+		</center>
+<h4>Like Iba, the provincial capital, and neighboring Olongapo City, Subic is also a fast growing municipality and expected to become a component city. It is a former home of one of the largest US military facilities outside of the US mainland, the Subic Bay Naval Base.</h4>
+<img src="images/location.png">
+<p><i>Location of Subic in the Map of Zambales</i></p>
+<br>
+
+<h1>How Subic Got its Name</h1>
+<h4>The town's early name is "Hubek" among the native inhabitants of the area - the Zambales - which means "head of a plow". The missionary fathers mispronounced "Hubek" as "Subiq".By the time of the American occupation of Subic, the Yankees mispronounced "Subiq" into "Subig". Eventually, "Subig" reverted to "Subiq", but the letter 'q' was replaced with letter 'c', hence the name "Subic".</h4><br>
+		
+		<h1>History of Subic</h1>
+<h4>The early inhabitants of Subic were the Negritos of Zambales (more popularly known as Aetas). At the end of the Pleistocene, seafarers from the Malay Peninsula of the Asian mainland sailed to the Southeast Asian islands, establishing pockets of population. The Malays were the first migrants to reach Zambales and drove the Negrito aborigines from the plains and valleys to the mountains. They found themselves at the western coastal plain of Luzon between Subic Bay and Lingayen Gulf.<h4><br>
+
+<h4>The town of Subic was founded by the Augustinian Friar, Father Rodrigo de San Miguel in 1607. The Spanish government christianized the Negritos and made them subjects of Spain. However, there were resistance by the Negritos and they continued to defy the government. In 1884, King Alfonso II issued a Royal Decree officially declaring Subic Bay as a naval port and Subic became Spain's stronghold in the Far East.</h4><br>
+
+<h4>After the Spanish-American war, which erupted in April 25, 1898, the U.S naval forces took over Subic and its Bay, whose deep harbor was regarded by Admiral George Dewey as having no equal in the Philippine Islands.</h4><br>
+
+<h4>In 1901, the U.S. Navy designated Subic Bay as a repair and supply naval base site. U.S. President Theodore Roosevelt issued an executive order in 1903 designating 70,000 acres of land including Subic as an American military reservation because of its strategic importance. Nearly 50% of Subic's original land area became part of the military reservation area.</h4><br>
+
+<h4>Subic was in ruins after the Japanese bombers and fighter planes attacked Subic Bay and Olongapo on December 14, 1941. During the Japanese occupation from 1942 to 1945, Subic served as a monitoring and defense facility of the Japanese Imperial Army until the end of World War II. On January 29, 1945, 40,000 troops landed in Zambales and advanced through Subic Bay to regain control of the base.</h4><br>
+
+<h4>Olongapo, a barrio of Subic and part of the U.S. Military Reservations was turned over to the Philippines and converted into a municipality by virtue of Executive Order No. 366 issued by then President Carlos P. Garcia in December 7, 1959. Based on census data, this milestone in Subic's history resulted in the drastic reduction of the town's population by more than half, from 25,233 to 12,985 in 1948 and 1960, respectively.</h4>
+
+</div>
+</div>
+<!--LGU-->
+<div data-role="page" id="lgu" style="background: #ffffff
+    url('images/bgod.jpg'); background-size:cover;"  data-theme="b">
+	<div data-role="header" style="min-height: 70px;">
+	<a href="#info" data-icon="back" class="ui-btn-left">Back</a>
+	<center>
+	<br>
+	<br>
+	<br>
+	
+		<p style="font-size:30px">LGU Directory</p>
+			<br>
+			<br>
+			
 	</center>
 	</div>
 	
@@ -80,19 +211,23 @@ body .ui-body-b, body .ui-overlay-b { text-shadow:0 0 0; }
 		<h3>Mayor's Office(Tourism Office):232-4895</h3>
 			<a href="tel:0472324895"><img src="images/buttons/call.png" /></a>
 			<br>
-
+		<h3>Kolehiyo ng Subic(Admin):232-4897</h3>
+			<a href="tel:0472324897"><img src="images/buttons/call.png" /></a>
 	</div>
 	
 </div>
 
 <!--saint-->
 <div data-role="page" id="saint" style="background: #ffffff
-    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
-	<div data-role="header" style="min-height: 70px;">
-	<a href="#info" data-icon="gear" class="ui-btn-left">Back</a>
+    url('images/bg1.jpg');  background-size:cover;"  data-theme="b">
+	<div data-role="header" style="min-height: 60px;">
+	<a href="#info" data-icon="back" class="ui-btn-left">Back</a>
 	<center>
 	<br>
-		<p style="font-size:40px">St. James son of Zebedee</p>
+	<br>
+	<br>
+		<p style="font-size:25px">St. James son of Zebedee</p>
+		<br>
 	<br>
 	</center>
 	</div>
@@ -102,14 +237,18 @@ body .ui-body-b, body .ui-overlay-b { text-shadow:0 0 0; }
 			<img src="images/saint.jpg"/>
 		</center>
 		<h2>Feast Day: July 25</h2>
-		<p style="font-size:25px"> 
+		<p style="font-size:20px"> 
 		James, John, Peter, and Andrew were all fishermen in Bethsaida, on the north shore of the Sea of Galilee. Our Lord called to Simon Peter and Andrew and said, "Come after Me and I will make you fishers of men" (Mt. 4:19). And, then Our Lord turned to James the Greater and his brother John, and both of them instantly left their nets and followed Our Lord.
 <br>
-St. James the Greater, along with Peter and John, was one of the few that witnessed Our Lord's Transfiguration on Mt. Tabor, the raising of the daughter of Jairus, and Our Lord’s suffering in the Garden of Gethsemane before His passion.
+<br>
+St. James the Greater, along with Peter and John, was one of the few that witnessed Our Lords Transfiguration on Mt. Tabor, the raising of the daughter of Jairus, and Our Lords suffering in the Garden of Gethsemane before His passion.
+<br>
 <br>
 And while St. James abandoned Our Lord during His Passion along with the other disciples, he repented and returned to the faith. And, not only that, but he went out and proclaimed the Gospel. According to legend St. James went to Spain and evangelized there for seven years. St. James and St. John asked Our Lord to be at His right-hand in Heaven, and Our Lord said they would be with Him in a far more different and wonderful way than they could have expected.
 <br>
+<br>
 St. James the Greater died a martyr for Jesus. He was killed by the sword by the order of King Herod Agrippa in c. 44 AD, and his martyrdom is the only one of the apostles that is recorded in the Bible (Acts 12:2). He was the first apostle to be murdered for the faith.
+<br>
 <br>
 Each year on July 24, many people make a pilgrimage to St. James of Compostela in Spain, the 3rd largest shrine in all of Christendom. According to legend,his body was taken by angels when he was murdered, and it was sailed in an unattended boat to Spain where a massive rock closed around it. In the ninth century, a star in the sky revealed the location of the tomb of St. James, and that was were the Shrine was built. Below the altar rests the remains of St. James the Greater. Some people do not believe the remains are truly his; however, Pope Leo XIII in 1884 in Omnipotens Deus accepted the authenticity of the relics at Compostela.
 		</p>
@@ -120,13 +259,16 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 
 <!--directory-->
 <div data-role="page" id="dir" style="background: #ffffff
-    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
-	<div data-role="header"  style="min-height: 70px;">
+    url('images/bgod.jpg');  background-size:cover;"  data-theme="b">
+	<div data-role="header"  style="min-height: 60px;">
 	
-	<a href="#main" data-icon="gear" class="ui-btn-left">Back</a>
+	<a href="#main" data-icon="back" class="ui-btn-left">Back</a>
 	<center>
 	<br>
-		<p style="font-size:30px">Directory</p>
+	<br>
+		<p style="font-size:30px">Places to Go</p>
+		<br>
+	<br>
 	</center>
 	</div>
 	
@@ -143,154 +285,98 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 	</div>
 </div>
 
-
+<!--Events-->
+	<div data-role="page" id="events" style="background: #ffffff
+    url('images/bg1.jpg');  background-attachment:local;"  data-theme="b" onload="showevent()">
+	<div data-role="header"  style="min-height: 70px;">
+	
+		<a href="#main" data-icon="back" class="ui-btn-left">Back</a>
+	<center>
+	<br>
+	<br>
+		<p style="font-size:35px">Events</p>
+		<br>
+	<br>
+	</center>
+	</div>
+	<div data-role="content" >
+		
+		<div id="topten"></div></center>
+	
+	
+	
+	</div>
+	</div>
+	
 	
 
 <!--info-->
 <div data-role="page" id="info" style="background: #ffffff
-    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+    url('images/bgod.jpg'); background-size:cover;"  data-theme="b">
+	<div data-role="header"  style="min-height: 60px;">
+	<a href="#main" data-icon="back" class="ui-btn-left">Back</a>
+	<center>
+	<br>
+	<br>
+		<p style="font-size:35px">Information</p>
+			<br>
+			<br>
+	</center>
+	</div>
+	
+	<div data-role="content" >
+
+		<a href="#past"><img src="images/heads/about.jpg"/></a><br><br>
+<a href="#fest"><img src="images/heads/fest.jpg"/></a><br><br>
+	<a href="#lgu"><img src="images/heads/lgu.jpg"/></a><br><br>
+			<a href="weather.html" rel="external"><img src="images/heads/weather.png"/></a><br><br>
+			<a href="#map" ><img src="images/heads/map.jpg"/></a><br><br>
+			<a href="#saint"><img src="images/heads/saint.jpg"/></a> <br><br>
+	</div>
+	
+</div>
+
+<!--Maps-->
+<div data-role="page" id="map" style="background: #ffffff
+    url('images/bgod.jpg'); background-size:cover;"  data-theme="b">
 	<div data-role="header"  style="min-height: 70px;">
-	<a href="#main" data-icon="gear" class="ui-btn-left">Back</a>
+	<a href="#main" data-icon="back" class="ui-btn-left">Back</a>
 	<center>
 	<br>
-		<p style="font-size:30px">Information</p>
+	<br>
+	<br>
+		<p style="font-size:30px">Maps</p>
+			<br>
+			<br>
 	</center>
 	</div>
 	
-	<div data-role="content" align="center">
-	
-			<a href="#pop"><img src="images/buttons/brgy.jpg"/></a><br><br>
-			<a href="maps.html" rel="external" ><img src="images/buttons/map.jpg"/></a><br><br>
-			<a href="#saint"><img src="images/buttons/saint.jpg"/></a> <br><br>
-			<a href="#ety"><img src="images/buttons/ety.jpg"/></a><br><br>
-		
-	</div>
-</div>
-
-<div data-role="page" id="ety" style="background: #ffffff
-    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
-	<div data-role="header" style="min-height: 70px;">
-	<a href="#info" data-icon="gear" class="ui-btn-left">Back</a>
-	<center>
-	<br>
-		<p style="font-size:20px">How "Subic" got its name?</p>
-	</center>
-	</div>
-
 	<div data-role="content">
-		<p style="font-size:20px">The town's early name is "Hubek" among the native inhabitants of the area - the Zambales - which means "head of a plow". The missionary fathers mispronounced "Hubek" as "Subiq".By the time of the American occupation of Subic, the Yankees mispronounced "Subiq" into "Subig". Eventually, "Subig" reverted to "Subiq", but the letter 'q' was replaced with letter 'c', hence the name "Subic".</p>
-	
+		<ul data-role="listview" data-inset="true">
+			<li style=" font-size:20px;"><a href="#" onclick="window.open('maps/subic.html','_blank','location=yes')">Map of Subic</a></li> 
+			<li style=" font-size:20px;"><a href="#" onclick="window.open('maps/restos.html','_blank','location=yes')">Restaurants in Subic</a></li> 
+			<li style=" font-size:20px;"><a href="#" onclick="window.open('maps/banks.html','_blank','location=yes')">Banks in Subic</a></li> 
+			<li style=" font-size:20px;"><a href="#" onclick="window.open('maps/gas.html','_blank','location=yes')">Gas Stations in Subic</a></li> 
+			<li style=" font-size:20px;"><a href="#" onclick="window.open('maps/groc.html','_blank','location=yes')">Grocery Stores in Subic</a></li> 
+			<li style=" font-size:20px;"><a href="#" onclick="window.open('maps/stores.html','_blank','location=yes')">Stores in Subic</a></li> 
+			<li style=" font-size:20px;"><a href="#" onclick="window.open('maps/worship.html','_blank','location=yes')">Places of Worship in Subic</a></li> 
+		</ul> 
+
 	</div>
-	
 </div>
 
-<!--population-->
-<div data-role="page" id="pop" style="background: #ffffff
-    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
-	<div data-role="header" style="min-height: 70px;">
-	<a href="#info" data-icon="gear" class="ui-btn-left">Back</a>
-	<center>
-	<br>
-		<p style="font-size:20px">Population Information</p>
-	</center>
-	</div>
-
-	<div data-role="content">
-	<center>
-		<h3 style="font-size:20px">2010 Census and Housing Population</h3><br>
-		<h1 style="font-size:20px">SUBIC</h1>
-		<br>
-			
-		<table >
-		<thead>
-			<tr >
-				<th>Barangay</th>
-				<th>Population</th>
-			</tr>
-		</thead>
-		<tbody style="font-size:20px">
-			<tr>
-				<td>Aningway-Sacatihan</td>
-				<td>4,440</td>
-			</tr>
-			<tr>
-				<td>Asinan Poblacion</td>
-				<td>883</td>
-			</tr>
-			<tr>
-				<td>Asinan Proper</td>
-				<td>6,335</td>
-			</tr>
-			<tr>
-				<td>Baraca-Camachile</td>
-				<td>2,805</td>
-			</tr>
-			<tr>
-				<td>Batiawan</td>
-				<td>1,015</td>
-			</tr>
-			<tr>
-				<td>Calapacuan</td>
-				<td>13,570</td>
-			</tr>
-			<tr>
-				<td>Calapandayan</td>
-				<td>9,698</td>
-			</tr>
-			<tr>
-				<td>Cawag</td>
-				<td>11,979</td>
-			</tr>
-			<tr>
-				<td>Ilwas</td>
-				<td>3,179</td>
-			</tr>
-			<tr>
-				<td>Mangan-Vaca</td>
-				<td>8,068</td>
-			</tr>
-			<tr>
-				<td>Matain</td>
-				<td>7,777</td>
-			</tr>
-			<tr>
-				<td>Naugsol</td>
-				<td>2,046</td>
-			</tr>
-			<tr>
-				<td>Pamatawan</td>
-				<td>3,817</td>
-			</tr>
-			<tr>
-				<td>San Isidro</td>
-				<td>6,741</td>
-			</tr>
-			<tr>
-				<td>Sto. Tomas</td>
-				<td>5,504</td>
-			</tr>
-			<tr>
-				<td>Wawandue</td>
-				<td>1,867</td>
-			</tr>
-			<tr>
-				<th>TOTAL POPULATION:</th>
-				<th>89,724</th>
-			</tr>
-		</tbody>
-	</table>
-</center>
-</div>
-</div>
 
 <!--About-->
 <div data-role="page" id="about" style="background: #ffffff
-    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+    url('images/bgod.jpg');  background-size:cover;"  data-theme="b">
 	<div data-role="header" style="min-height: 70px;">
-	<a href="#main" data-icon="gear" class="ui-btn-left">Back</a>
+	<a href="#main" data-icon="back" class="ui-btn-left">Back</a>
 	<center>
 	<br>
-		<p style="font-size:30px">SubicTacular!</p>
+	<br>
+		<p style="font-size:35px">SubicTacular!</p>
+		<br>
+	<br>
 	</center>
 	</div>
 	
@@ -298,24 +384,35 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 		<center>
 		<img src="images/logo5.png"/>
 		</center>
+		<div data-role="collapsible" data-content-theme="b" id="my-collaspible">
+		<h1>Contact Us</h1>
+		<h4>If you have questions, comments and concerns, contact the Subic Tourism Office:<br>
+	Subic Tourism Office: <a href="mailto:edwinreyes1980@yahoo.com">edwinreyes1980@yahoo.com</a><br><br></h4>
+	
+<h4>If you have questions, comments and concerns about this app, contact the SubicTacular Team:<br>
+	Kenneth Jefferson Canlas (Developer/ Designer): <a href="mailto:kennethcanlas630@gmail.com">kennethcanlas630@gmail.com</a><br>
+	Reymark Nabong (Application Designer): <a href="mailto:mr.rkn25@gmail.com">mr.rkn25@gmail.com</a><br>
+	Karen Cayabyab (Project Analyst): <a href="mailto:akosikaren14@gmail.com">akosikaren14@gmail.com</a></h4>
+	
+</h4>
+		</div>
 			<div data-role="collapsible" data-content-theme="b" id="my-collaspible">
-    <h4>About SubicTacular!</h4>
-    <p>SubicTacular! is an app that aims to promote Subic Town as an accessible and affordable recreational haven for the leisure-seekers.<br>
+    <h1>About SubicTacular!</h1>
+    <h4>SubicTacular! is an app that aims to promote Subic Town as an accessible and affordable recreational haven for the leisure-seekers.<br>
 	The app features a directory of local attractions and establishments around Subic, photo gallery of sceneries and recent events Subic
 	<br>
-	This mobile application is owned and monitored by the Local Government of Subic and is developed and maintained by Team Terabyte as part of their college thesis.</p>
+	This mobile application is owned and monitored by the Local Government of Subic and is developed and maintained by Team Terabyte as part of their college thesis.</h4>
 </div>
 <div data-role="collapsible" data-content-theme="c" id="my-collaspible">
-    <h4>Credits</h4>
-    <p>Special Thanks to the following people who provided some photos and information for SubicTacular!:<br>
-	Deorina Canlas<br>
+    <h1>Credits</h1>
+    <h4>Special Thanks to our friends who provided us some photos and information for SubicTacular!:<br>
 	Aga Manalansan<br>
-	Patrick Beato<br>
+	Trick Arede<br>
 	Jasnah de Santos<br>
 	Michael John Mayo <br>
 	Ivan Kultura<br>
-<a href="https://www.facebook.com/MAHALkoangSUBIC" target="_blank">Laham Ko ang Cibus </a>	<br>
-</p>
+Laham Ko ang Cibus <br>
+</h4>
 </div>
 		</div>
 		</div>
@@ -325,81 +422,86 @@ Each year on July 24, many people make a pilgrimage to St. James of Compostela i
 
 <!--Hotel and Resorts-->
 <div data-role="page" id="resorts" style="background: #ffffff
-    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+    url('images/bgod.jpg');  background-size:cover;"  data-theme="b">
 	<div data-role="header"  style="min-height: 70px;">
 	
-	<a href="#dir" data-icon="gear" class="ui-btn-left">Back</a>
+	<a href="#dir" data-icon="back" class="ui-btn-left">Back</a>
 	<center>
 	<br>
-		<p style="font-size:25px">Hotel and Resorts</p>
+	<br>
+	
+		<p style="font-size:35px">Resorts</p>
+		<br>
+	<br>
 	</center>
 	</div>
 	
 	<div data-role="content">
 	<ul data-role="listview" data-inset="true">
-			<li><a href="gallery/whiterock.html"  data-ajax="false" style=" font-size:13px;">White Rock Beach Resort and Waterpark</a></li> 
-			<li><a href="gallery/krrels.html"  data-ajax="false"  style=" font-size:13px;">Krrels Family Resort</a></li> 
-			<li><a href="gallery/sm.html"  data-ajax="false" style=" font-size:13px;">Sun Marina Beach Resort</a></li> 
-			<li><a href="#Gallery1"  style=" font-size:13px;">Club Morrocco Resort</a></li> 
-			<li><a href="#Gallery1"  style=" font-size:13px;">Aplaya Del Subic</a></li> 
-			<li><a href="#Gallery1"  style=" font-size:13px;">Apo Gulf Resort</a></li> 
-			<li><a href="#Gallery1"  style=" font-size:13px;">Hawaiian Garden Resort</a></li> 
+			<li><a href="gallery/whiterock.html"  rel="external" style=" font-size:20px;">White Rock Beach Resort </a></li> 
+			<li><a href="gallery/krrels.html"  rel="external" style=" font-size:20px;">Krrels Family Resort</a></li> 
+			<li><a href="gallery/sm.html"  rel="external" style=" font-size:20px;">Sun Marina Beach Resort</a></li> 
+			<li><a href="gallery/aplaya.html"  rel="external" style=" font-size:20px;">Aplaya Del Subic</a></li> 
 		</ul> 
 	</div>
 </div>
 
 <!--Dining-->
 <div data-role="page" id="resto" style="background: #ffffff
-    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+    url('images/bgod.jpg');   background-size:cover;"  data-theme="b">
 	<div data-role="header"  style="min-height: 70px;">
 	
-	<a href="#dir" data-icon="gear" class="ui-btn-left">Back</a>
+	<a href="#dir" data-icon="back" class="ui-btn-left">Back</a>
 	<center>
 	<br>
-		<p style="font-size:23px">Dining and Nightlife</p>
+	<br>
+	<br>
+		<p style="font-size:35px">Dining and Nightlife</p>
+		<br>
+	<br>
 	</center>
 	</div>
 	
 	<div data-role="content">
-	<ul data-role="listview" data-inset="true">
-			<li><a href="gallery/hydra.html"  rel="external"  style=" font-size:13px;">Hydra Restobar at the Pond</a></li> 
-			<li><a href="gallery/sandoval.html"  rel="external" style=" font-size:13px;">Sandoval's Subic Jam</a></li> 
-			<li><a href="gallery/ay.html"  rel="external" style=" font-size:13px;">Subic Ay Restaurant and Inn</a></li> 
+	<ul data-role="listview" data-inset="true"> 
+			<li><a href="gallery/hydra.html"  rel="external"  style=" font-size:25px;">Hydra Restobar at the Pond</a></li> 
+			<li><a href="gallery/sandoval.html"  rel="external" style=" font-size:25px;">Sandoval's Subic Jam</a></li> 
+			<li><a href="gallery/ay.html"  rel="external" style=" font-size:25px;">Subic Ay Restaurant and Inn</a></li> 
 
-			<li><a href="gallery/jolibee.html"  rel="external" style=" font-size:13px;">Jolibee </a></li> 
-			<li><a href="gallery/chow.html"  rel="external" style=" font-size:13px;">Chowking </a></li> 
-			<li><a href="gallery/mi.html"  rel="external"style=" font-size:13px;">Mang Inasal</a></li> 
+			<li><a href="gallery/jolibee.html"  rel="external" style=" font-size:25px;">Jolibee </a></li> 
+			<li><a href="gallery/chow.html"  rel="external" style=" font-size:25px;">Chowking </a></li> 
+			<li><a href="gallery/mi.html"  rel="external"style=" font-size:25px;">Mang Inasal</a></li> 
 		</ul> 
 	</div>
 </div>
 
 <!--Others-->
 <div data-role="page" id="others" style="background: #ffffff
-    url('images/bg.png');  background-attachment:fixed;"  data-theme="b">
+    url('images/bgod.jpg');   background-size:cover;"  data-theme="b">
 	<div data-role="header"  style="min-height: 70px;">
 	
-	<a href="#dir" data-icon="gear" class="ui-btn-left">Back</a>
+	<a href="#dir" data-icon="back" class="ui-btn-left">Back</a>
 	<center>
 	<br>
-		<p style="font-size:25px">Attractions</p>
+	<br>
+		<p style="font-size:35px">Attractions</p>
+			<br>
+	<br>
 	</center>
 	</div>
 	
 	<div data-role="content">
 	<ul data-role="listview" data-inset="true">
-			<li><a href="gallery/james.html"  data-ajax="false" style=" font-size:13px;">Saint James Parish Church</a></li> 
-			<li><a href="gallery/grotto.html"  data-ajax="false" style=" font-size:13px;">Garden of Prayer</a></li>
+		<li><a href="gallery/mount.html"  rel="external" style=" font-size:25px;">Mount Balingkilat</a></li> 
+		<li><a href="gallery/balon.html"  rel="external" style=" font-size:25px;">Balon Falls</a></li> 
+			<li><a href="gallery/james.html"  rel="external" style=" font-size:25px;">Saint James Parish Church</a></li> 
+			<li><a href="gallery/grotto.html"  rel="external" style=" font-size:25px;">Garden of Prayer</a></li>
 		</ul> 
 	</div>
 </div>
 
 
-<!--OTHERS-->
 
-<!--GARDEN OF PRAYER-->
-
-	
-	<!--SIDE PANEL-->
 
 	
 	

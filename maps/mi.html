@@ -2,66 +2,119 @@
 <html manifest="cache.manifest">
    <head>
 		<title>SubicTacular!</title>
-	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
-		<link rel="stylesheet" href="../css/subic.min.css" />
-<link rel="stylesheet" href="../css/jquery.mobile-1.3.2.min.css" />
-<link rel="stylesheet" href="../css/subic.min.css" />
-<link rel="stylesheet" href="../css/jquery.mobile.structure-1.3.2.min.css" />
-		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<meta name="viewport" content="user-scalable=0, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+
+	
+<link rel="stylesheet" href="../css/jquery-mobile-1.0/jquery.mobile.css" />
+<link rel="stylesheet" href="../css/mobile.css" />
+<link rel="stylesheet" href="../css/subic.css" />
+<script type="text/javascript" src="js/modernizr.min.js"></script>
+
+
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
 		<script type="text/javascript" src="../js/jquery-1.7.1/jquery.min.js"></script>
 		<script type="text/javascript" src="../js/jquery-mobile-1.0/jquery.mobile.min.js"></script>
 		<script type="text/javascript" src="../js/demo.js"></script>
 		<script type="text/javascript" src="../ui/jquery.ui.map.js"></script>
+		<script type="text/javascript" src="../ui/jquery.ui.map.services.js"></script>
+		<script type="text/javascript" src="../ui/jquery.ui.map.extensions.js"></script>
 
 			<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		
+		
+		</script>
 		<script type="text/javascript">
 				
+ function onLoad(){
+ document.addEventListener("deviceready", onDeviceReady, true);
+ 
+ }
 
-			google.maps.visualRefresh = true;
-			var mobileDemo = { 'center': '14.877012,120.235067' , 'zoom': 20};
-			
+						var mobileDemo = { 'center': '14.877012,120.235067', 'zoom': 18};
+						
+			////////////////////////////////////////////////////////////
 	
-			$('#basic_map').live('pageinit', function() {
-				demo.add('basic_map', function() {
+				$('#directions_map').live('pageinit', function() {
+				demo.add('directions_map', function() {
 					$('#map_canvas').gmap({'center': mobileDemo.center, 'zoom': mobileDemo.zoom, 'disableDefaultUI':true, 'callback': function() {
 						var self = this;
-				self.addMarker({'position': this.get('map').getCenter() }).click(function() {
+									self.addMarker({'position': this.get('map').getCenter() , optimized: false}).click(function() {
 			
 						});
-					}}); 
-				}).load('basic_map');
+							
+								$('#drive').click(function() {
+							self.displayDirections({ 'origin': $('#from').val(), 'destination': $('#to').val(), 'travelMode': google.maps.DirectionsTravelMode.DRIVING }, { 'panel': document.getElementById('directions')}, function(response, status) {
+								( status === 'OK' ) ? $('#results').show() : $('#results').hide();
+							});
+							return false;
+						});
+							$('#transit').click(function() {
+							self.displayDirections({ 'origin': $('#from').val(), 'destination': $('#to').val(), 'travelMode': google.maps.DirectionsTravelMode.TRANSIT }, { 'panel': document.getElementById('directions')}, function(response, status) {
+								( status === 'OK' ) ? $('#results').show() : $('#results').hide();
+							});
+							return false;
+						});
+					}});
+				}).load('directions_map');
 			});
 			
-			$('#basic_map').live('pageshow', function() {
-				demo.add('basic_map', function() { $('#map_canvas').gmap('refresh'); }).load('basic_map');
+			$('#directions_map').live('pageshow', function() {
+				demo.add('directions_map', $('#map_canvas').gmap('get', 'getCurrentPosition')).load('directions_map');
 			});
 
         </script>
 		
 	
     </head>
-    <body>
+    <body onload="onLoad()">
 	
 		
-		<div id="basic_map" data-role="page" id="subic">
+		<div id="directions_map" data-role="page" >
 				<div data-role="header" style="min-height: 70px;">
-				<a href="../gallery/mi.html" rel="external" data-icon="gear" class="ui-btn-left">Back</a>
+				<a href="../gallery/mi.html" rel="external"  data-icon="back" class="ui-btn-left">Back</a>
 	<center>
 	<br>
 	<br>
-		<p style="font-size:20px">Mang Inasal</p>
+		<p style="font-size:25px">Mang Inasal Subic Town</p>
+		<br>
+
 	</center>
 	</div>
-			<div data-role="content">	
-				
-					<div id="map_canvas" style="position:absolute; width:100%; height:100%; left: -4px; top: 75px" ></div>
+			
+				<div data-role="content">	
+						<i >NOTE: You can only put Philippine Areas in this feature (Ex. Manila, Makati etc.)</i>
+
+				<div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;">
+					<div id="map_canvas" style="height:300px;"></div>
+					<br>
+					
+<label for="from">From</label>
+						<input id="from" class="ui-bar-c" type="text"  placeholder="Ex. Manila"/>
+					</p>
+					<p>
+						<label for="to">To: Mang Inasal Subic Town</label>
+						<input id="to" class="ui-bar-c" type="text " hidden="true" value="14.877012,120.235067" />
+					</p>
+									<label ><b>Mode of Travel<b></label>
+					<a id="drive" href="#" data-role="button" data-icon="search" >Driving</a>
+					<a id="transit" href="#" data-role="button" data-icon="search" >Public Transit</a>
+					<p>
+				</div>
+				<div id="results" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="display:none;">
+					<div class="ui-li ui-li-divider ui-btn ui-bar-b ui-corner-top ui-btn-up-undefined" >Results</div>
+					<div id="directions"></div>
+					<div class="ui-li ui-li-divider ui-btn ui-bar-b ui-corner-bottom ui-btn-up-undefined"></div>
 				</div>
 			</div>
+		</div>
+	
+		
+			
+
 
 		
 	
 		
 	</body>
-</html>
 </html>

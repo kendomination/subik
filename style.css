@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'Nevis';
+	src: url('gallery/fonts/nevis.ttf');
+	src: url('gallery/fonts/nevis.woff') format('woff'),
+    
+}
+
+p, h1, h2, h3, h4, a{
+		font-family:'Nevis';
+
+}
